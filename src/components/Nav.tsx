@@ -84,14 +84,14 @@ const Nav = () => {
                   <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#886c46] transition-all duration-300 group-hover:w-full"></span>
                   
                   {/* Main Dropdown */}
-                  <div className="absolute left-0 top-full pt-6 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-[100]">
-                    <div className="min-w-[280px] rounded-2xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-2xl">
+                  <div className="absolute left-0 top-full pt-6 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-100">
+                    <div className="min-w-70 rounded-2xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-2xl">
                       <ul className="py-2">
                         {/* Modular Buildings */}
                         <li className="group/item relative px-2">
                           <div className="flex items-center justify-between px-4 py-3 hover:bg-white/5 transition-colors rounded-lg cursor-pointer">
                             <div className="flex items-center gap-3">
-                              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
+                              <div className="h-8 w-8 rounded-lg bg-linear-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
                                 <Home className="w-4 h-4 text-white" />
                               </div>
                               <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Modular Buildings</span>
@@ -100,7 +100,7 @@ const Nav = () => {
                           </div>
                           
                           {/* Sub-dropdown */}
-                          <div className="absolute left-full top-0 ml-2 min-w-[220px] rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
+                          <div className="absolute left-full top-0 ml-2 min-w-55 rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
                             <ul className="py-2">
                               <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Container Modules</a></li>
                               <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Expandable Units</a></li>
@@ -114,7 +114,7 @@ const Nav = () => {
                         <li className="group/item relative px-2">
                           <div className="flex items-center justify-between px-4 py-3 hover:bg-white/5 transition-colors rounded-lg cursor-pointer">
                             <div className="flex items-center gap-3">
-                              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
+                              <div className="h-8 w-8 rounded-lg bg-linear-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
                                 <Building2 className="w-4 h-4 text-white" />
                               </div>
                               <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Prefab Homes</span>
@@ -122,7 +122,7 @@ const Nav = () => {
                             <ChevronRight className="w-4 h-4 text-white/40 group-hover/item:text-[#886c46] transition-all duration-300 group-hover/item:translate-x-1" />
                           </div>
                           
-                          <div className="absolute left-full top-0 ml-2 min-w-[220px] rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
+                          <div className="absolute left-full top-0 ml-2 min-w-55 rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
                             <ul className="py-2">
                               <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Studio Homes</a></li>
                               <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Family Villas</a></li>
@@ -136,7 +136,7 @@ const Nav = () => {
                         <li className="group/item relative px-2">
                           <div className="flex items-center justify-between px-4 py-3 hover:bg-white/5 transition-colors rounded-lg cursor-pointer">
                             <div className="flex items-center gap-3">
-                              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
+                              <div className="h-8 w-8 rounded-lg bg-linear-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
                                 <Factory className="w-4 h-4 text-white" />
                               </div>
                               <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Industrial</span>
@@ -144,7 +144,7 @@ const Nav = () => {
                             <ChevronRight className="w-4 h-4 text-white/40 group-hover/item:text-[#886c46] transition-all duration-300 group-hover/item:translate-x-1" />
                           </div>
                           
-                          <div className="absolute left-full top-0 ml-2 min-w-[220px] rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
+                          <div className="absolute left-full top-0 ml-2 min-w-55 rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
                             <ul className="py-2">
                               <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Warehouses</a></li>
                               <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Workshops</a></li>
@@ -157,7 +157,7 @@ const Nav = () => {
                         <li className="group/item relative px-2">
                           <div className="flex items-center justify-between px-4 py-3 hover:bg-white/5 transition-colors rounded-lg cursor-pointer">
                             <div className="flex items-center gap-3">
-                              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
+                              <div className="h-8 w-8 rounded-lg bg-linear-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
                                 <Briefcase className="w-4 h-4 text-white" />
                               </div>
                               <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Commercial</span>
@@ -165,7 +165,7 @@ const Nav = () => {
                             <ChevronRight className="w-4 h-4 text-white/40 group-hover/item:text-[#886c46] transition-all duration-300 group-hover/item:translate-x-1" />
                           </div>
                           
-                          <div className="absolute left-full top-0 ml-2 min-w-[220px] rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
+                          <div className="absolute left-full top-0 ml-2 min-w-55 rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
                             <ul className="py-2">
                               <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Office Spaces</a></li>
                               <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Retail Stores</a></li>
@@ -179,7 +179,7 @@ const Nav = () => {
                         <li className="group/item relative px-2">
                           <div className="flex items-center justify-between px-4 py-3 hover:bg-white/5 transition-colors rounded-lg cursor-pointer">
                             <div className="flex items-center gap-3">
-                              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
+                              <div className="h-8 w-8 rounded-lg bg-linear-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
                                 <FileText className="w-4 h-4 text-white" />
                               </div>
                               <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Site Offices</span>
@@ -187,7 +187,7 @@ const Nav = () => {
                             <ChevronRight className="w-4 h-4 text-white/40 group-hover/item:text-[#886c46] transition-all duration-300 group-hover/item:translate-x-1" />
                           </div>
                           
-                          <div className="absolute left-full top-0 ml-2 min-w-[220px] rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
+                          <div className="absolute left-full top-0 ml-2 min-w-55 rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
                             <ul className="py-2">
                               <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Project Offices</a></li>
                               <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Security Cabins</a></li>
@@ -200,7 +200,7 @@ const Nav = () => {
                         <li className="group/item relative px-2">
                           <div className="flex items-center justify-between px-4 py-3 hover:bg-white/5 transition-colors rounded-lg cursor-pointer">
                             <div className="flex items-center gap-3">
-                              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
+                              <div className="h-8 w-8 rounded-lg bg-linear-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
                                 <Package className="w-4 h-4 text-white" />
                               </div>
                               <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Storage Units</span>
@@ -208,7 +208,7 @@ const Nav = () => {
                             <ChevronRight className="w-4 h-4 text-white/40 group-hover/item:text-[#886c46] transition-all duration-300 group-hover/item:translate-x-1" />
                           </div>
                           
-                          <div className="absolute left-full top-0 ml-2 min-w-[220px] rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
+                          <div className="absolute left-full top-0 ml-2 min-w-55 rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
                             <ul className="py-2">
                               <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Tool Sheds</a></li>
                               <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Equipment Storage</a></li>
@@ -220,8 +220,8 @@ const Nav = () => {
                       </ul>
 
                       {/* CTA Footer */}
-                      <div className="border-t border-white/5 p-4 bg-gradient-to-r from-[#886c46]/5 to-transparent">
-                        <button className="w-full rounded-lg px-4 py-2.5 text-xs font-light tracking-wider bg-gradient-to-r from-[#886c46] to-[#6f5838] hover:from-[#6f5838] hover:to-[#886c46] transition-all duration-300 text-white shadow-lg hover:shadow-[#886c46]/20">
+                      <div className="border-t border-white/5 p-4 bg-linear-to-r from-[#886c46]/5 to-transparent">
+                        <button className="w-full rounded-lg px-4 py-2.5 text-xs font-light tracking-wider bg-linear-to-r from-[#886c46] to-[#6f5838] hover:from-[#6f5838] hover:to-[#886c46] transition-all duration-300 text-white shadow-lg hover:shadow-[#886c46]/20">
                           View All Products
                         </button>
                       </div>
