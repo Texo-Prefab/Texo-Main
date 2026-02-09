@@ -1,10 +1,335 @@
-import React from 'react'
+'use client'
+import Image from 'next/image'
+import React, { useEffect, useState } from 'react'
+import { Merriweather } from 'next/font/google'
+import { Facebook, Instagram, Mail, Phone, Youtube, Home, Building2, Factory, Briefcase, FileText, Package, ChevronDown, ChevronRight, Menu } from 'lucide-react'
+
+const merri = Merriweather({
+  subsets: ['latin'],
+  weight: ['300','400','700','900'], 
+})
 
 const Nav = () => {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > window.innerHeight) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <div>
-        
-    </div>
+    <>
+      <div 
+        className={`absolute top-0 left-0 right-0 z-40 transition-all duration-500 ${
+          scrolled ? 'opacity-0 -translate-y-full pointer-events-none' : 'opacity-100 translate-y-0'
+        }`}
+      >
+        <div className="border-b border-white/10 bg-black/30 backdrop-blur-sm">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
+            <div className="flex items-center gap-6 text-xs text-white/70">
+              <span className="flex items-center gap-2">
+                <Phone className="h-3 w-3" />
+                +91 1234 567 890
+              </span>
+              <span className="flex items-center gap-2">
+                <Mail className="h-3 w-3" />
+                info@prefabco.com
+              </span>
+            </div>
+            <div className="flex items-center gap-4">
+              <a href="#" className="text-white/70 transition-colors hover:text-[#886c46]">
+                <Facebook className='w-4 h-4' />
+              </a>
+              <a href="#" className="text-white/70 transition-colors hover:text-[#886c46]">
+                <Youtube className='w-4 h-4' />
+              </a>
+              <a href="#" className="text-white/70 transition-colors hover:text-[#886c46]">
+                <Instagram className='w-4 h-4' />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-black/20 backdrop-blur-md">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+            
+            <div className="shrink-0">
+              <Image src='/logo.webp' width={90} height={90} alt='Prefab Construction Company Logo' className="h-auto w-auto" />
+            </div>
+
+            <nav className="hidden lg:block">
+              <ul className={`${merri.className} flex items-center gap-1`}>
+                <li className="group relative px-4 py-2">
+                  <a href="#" className="text-sm font-light tracking-wide text-white transition-colors duration-300 group-hover:text-[#886c46]">
+                    HOME
+                  </a>
+                  <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#886c46] transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li className="group relative px-4 py-2">
+                  <div className="flex items-center gap-1 cursor-pointer">
+                    <span className="text-sm font-light tracking-wide text-white transition-colors duration-300 group-hover:text-[#886c46]">
+                      PRODUCTS
+                    </span>
+                    <ChevronDown className="w-3 h-3 text-white/70 group-hover:text-[#886c46] transition-all duration-300 group-hover:rotate-180" />
+                  </div>
+                  
+                  <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#886c46] transition-all duration-300 group-hover:w-full"></span>
+                  
+                  {/* Main Dropdown */}
+                  <div className="absolute left-0 top-full pt-6 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-[100]">
+                    <div className="min-w-[280px] rounded-2xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-2xl">
+                      <ul className="py-2">
+                        {/* Modular Buildings */}
+                        <li className="group/item relative px-2">
+                          <div className="flex items-center justify-between px-4 py-3 hover:bg-white/5 transition-colors rounded-lg cursor-pointer">
+                            <div className="flex items-center gap-3">
+                              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
+                                <Home className="w-4 h-4 text-white" />
+                              </div>
+                              <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Modular Buildings</span>
+                            </div>
+                            <ChevronRight className="w-4 h-4 text-white/40 group-hover/item:text-[#886c46] transition-all duration-300 group-hover/item:translate-x-1" />
+                          </div>
+                          
+                          {/* Sub-dropdown */}
+                          <div className="absolute left-full top-0 ml-2 min-w-[220px] rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
+                            <ul className="py-2">
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Container Modules</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Expandable Units</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Multi-Story Modules</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Custom Designs</a></li>
+                            </ul>
+                          </div>
+                        </li>
+
+                        {/* Prefab Homes */}
+                        <li className="group/item relative px-2">
+                          <div className="flex items-center justify-between px-4 py-3 hover:bg-white/5 transition-colors rounded-lg cursor-pointer">
+                            <div className="flex items-center gap-3">
+                              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
+                                <Building2 className="w-4 h-4 text-white" />
+                              </div>
+                              <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Prefab Homes</span>
+                            </div>
+                            <ChevronRight className="w-4 h-4 text-white/40 group-hover/item:text-[#886c46] transition-all duration-300 group-hover/item:translate-x-1" />
+                          </div>
+                          
+                          <div className="absolute left-full top-0 ml-2 min-w-[220px] rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
+                            <ul className="py-2">
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Studio Homes</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Family Villas</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Vacation Cottages</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Luxury Residences</a></li>
+                            </ul>
+                          </div>
+                        </li>
+
+                        {/* Industrial */}
+                        <li className="group/item relative px-2">
+                          <div className="flex items-center justify-between px-4 py-3 hover:bg-white/5 transition-colors rounded-lg cursor-pointer">
+                            <div className="flex items-center gap-3">
+                              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
+                                <Factory className="w-4 h-4 text-white" />
+                              </div>
+                              <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Industrial</span>
+                            </div>
+                            <ChevronRight className="w-4 h-4 text-white/40 group-hover/item:text-[#886c46] transition-all duration-300 group-hover/item:translate-x-1" />
+                          </div>
+                          
+                          <div className="absolute left-full top-0 ml-2 min-w-[220px] rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
+                            <ul className="py-2">
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Warehouses</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Workshops</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Factory Units</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Storage Facilities</a></li>
+                            </ul>
+                          </div>
+                        </li>
+
+                        <li className="group/item relative px-2">
+                          <div className="flex items-center justify-between px-4 py-3 hover:bg-white/5 transition-colors rounded-lg cursor-pointer">
+                            <div className="flex items-center gap-3">
+                              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
+                                <Briefcase className="w-4 h-4 text-white" />
+                              </div>
+                              <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Commercial</span>
+                            </div>
+                            <ChevronRight className="w-4 h-4 text-white/40 group-hover/item:text-[#886c46] transition-all duration-300 group-hover/item:translate-x-1" />
+                          </div>
+                          
+                          <div className="absolute left-full top-0 ml-2 min-w-[220px] rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
+                            <ul className="py-2">
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Office Spaces</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Retail Stores</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Restaurants</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Showrooms</a></li>
+                            </ul>
+                          </div>
+                        </li>
+
+                        {/* Site Offices */}
+                        <li className="group/item relative px-2">
+                          <div className="flex items-center justify-between px-4 py-3 hover:bg-white/5 transition-colors rounded-lg cursor-pointer">
+                            <div className="flex items-center gap-3">
+                              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
+                                <FileText className="w-4 h-4 text-white" />
+                              </div>
+                              <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Site Offices</span>
+                            </div>
+                            <ChevronRight className="w-4 h-4 text-white/40 group-hover/item:text-[#886c46] transition-all duration-300 group-hover/item:translate-x-1" />
+                          </div>
+                          
+                          <div className="absolute left-full top-0 ml-2 min-w-[220px] rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
+                            <ul className="py-2">
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Project Offices</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Security Cabins</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Meeting Rooms</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Worker Facilities</a></li>
+                            </ul>
+                          </div>
+                        </li>
+
+                        <li className="group/item relative px-2">
+                          <div className="flex items-center justify-between px-4 py-3 hover:bg-white/5 transition-colors rounded-lg cursor-pointer">
+                            <div className="flex items-center gap-3">
+                              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
+                                <Package className="w-4 h-4 text-white" />
+                              </div>
+                              <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Storage Units</span>
+                            </div>
+                            <ChevronRight className="w-4 h-4 text-white/40 group-hover/item:text-[#886c46] transition-all duration-300 group-hover/item:translate-x-1" />
+                          </div>
+                          
+                          <div className="absolute left-full top-0 ml-2 min-w-[220px] rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
+                            <ul className="py-2">
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Tool Sheds</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Equipment Storage</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Cold Storage</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Archive Rooms</a></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+
+                      {/* CTA Footer */}
+                      <div className="border-t border-white/5 p-4 bg-gradient-to-r from-[#886c46]/5 to-transparent">
+                        <button className="w-full rounded-lg px-4 py-2.5 text-xs font-light tracking-wider bg-gradient-to-r from-[#886c46] to-[#6f5838] hover:from-[#6f5838] hover:to-[#886c46] transition-all duration-300 text-white shadow-lg hover:shadow-[#886c46]/20">
+                          View All Products
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li className="group relative px-4 py-2">
+                  <a href="#" className="text-sm font-light tracking-wide text-white transition-colors duration-300 group-hover:text-[#886c46]">
+                    FEATURES
+                  </a>
+                  <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#886c46] transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li className="mx-2 h-6 w-px bg-white/20"></li>
+                <li className="group relative px-4 py-2">
+                  <a href="#" className="text-sm font-light tracking-wide text-white transition-colors duration-300 group-hover:text-[#886c46]">
+                    ABOUT US
+                  </a>
+                  <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#886c46] transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li className="group relative px-4 py-2">
+                  <a href="#" className="text-sm font-light tracking-wide text-white transition-colors duration-300 group-hover:text-[#886c46]">
+                    BLOGS
+                  </a>
+                  <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#886c46] transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li className="group relative px-4 py-2">
+                  <a href="#" className="text-sm font-light tracking-wide text-white transition-colors duration-300 group-hover:text-[#886c46]">
+                    VLOGS
+                  </a>
+                  <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#886c46] transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li className="group relative px-4 py-2">
+                  <a href="#" className="text-sm font-light tracking-wide text-white transition-colors duration-300 group-hover:text-[#886c46]">
+                    CAREER
+                  </a>
+                  <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#886c46] transition-all duration-300 group-hover:w-full"></span>
+                </li>
+              </ul>
+            </nav>
+
+            <div className="flex items-center gap-4">
+              <button className={`${merri.className} group relative overflow-hidden rounded-full border border-[#886c46]/30 bg-linear-to-r from-[#886c46] to-[#6f5838] px-6 py-2.5 text-sm font-light tracking-wide text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-[#886c46]/20`}>
+                <span className="relative z-10">CONTACT US</span>
+                <div className="absolute inset-0 z-0 bg-linear-to-r from-[#6f5838] to-[#886c46] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              </button>
+              
+              <button className="lg:hidden text-white">
+                <Menu className="h-6 w-6" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div 
+        className={`fixed top-5 left-1/2 -translate-x-1/2 z-999 transition-all rounded-full border border-[#886c46] duration-500 ${
+          scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-20 pointer-events-none'
+        }`}
+      >
+        <div className="relative">
+          
+          <div className="absolute inset-0 rounded-full border border-[#886c46] blur-xl bg-[#886c46]/10"></div>
+
+          <ul 
+            className={`${merri.className}
+            relative
+            flex justify-center items-center gap-8
+            px-10 py-4
+            rounded-full
+            bg-white/80 backdrop-blur-xl
+            border border-white/40
+            shadow-[0_10px_40px_rgba(0,0,0,0.25)]
+            before:absolute before:inset-0 before:rounded-full
+            before:border before:border-[#886c46]/20
+            before:opacity-60
+            `}
+          >
+            
+            {[
+              "HOME",
+              "PRODUCTS",
+              "FEATURES",
+              "CONTACT US"
+            ].map((item) => (
+              <li
+                key={item}
+                className="
+                relative cursor-pointer
+                text-[13px] tracking-[0.15em]
+                text-black/80
+                transition-all duration-300
+                hover:text-[#886c46]
+                after:absolute after:left-1/2 after:-bottom-1.5
+                after:h-px after:w-0
+                after:bg-[#886c46]
+                after:transition-all after:duration-300
+                hover:after:left-0 hover:after:w-full
+                "
+              >
+                {item}
+              </li>
+            ))}
+
+          </ul>
+        </div>
+      </div>
+
+    </>
   )
 }
 
