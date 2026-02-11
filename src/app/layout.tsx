@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-linear-to-r from-white via-[#f8f5f0] to-white `}
+        className={`bg-white `}
       >
         <Nav />
         {children}

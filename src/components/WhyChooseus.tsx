@@ -1,7 +1,8 @@
 'use client'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
 import { Merriweather, Playfair_Display } from 'next/font/google'
+import Image from 'next/image'
 
 const merri = Merriweather({
   subsets: ['latin'],
@@ -26,74 +27,51 @@ const WhyChooseUs = () => {
   const features = [
     {
       number: '01',
-      
       title: 'Lightning Fast Construction',
       description: 'Prefabricated components reduce on-site construction time by 60%. What takes months in traditional building, we accomplish in weeks.',
       stat: '60%',
       statLabel: 'Faster',
-      color: 'from-amber-500 to-orange-600'
     },
     {
       number: '02',
-      
       title: 'Sustainable & Eco-Friendly',
       description: 'Factory-controlled production minimizes waste and energy consumption. Our modular designs incorporate recycled materials and green technologies.',
       stat: '40%',
       statLabel: 'Less Waste',
-      color: 'from-green-500 to-emerald-600'
     },
     {
       number: '03',
-      
       title: 'Cost-Effective Solutions',
       description: 'Streamlined manufacturing and reduced labor costs translate to savings for you. Predictable pricing with no surprise expenses or delays.',
       stat: '30%',
       statLabel: 'Savings',
-      color: 'from-blue-500 to-indigo-600'
     },
     {
       number: '04',
-      
       title: 'Superior Quality Control',
       description: 'Every module is manufactured in our controlled facility, ensuring consistent quality standards that exceed traditional construction methods.',
       stat: '99.8%',
       statLabel: 'Quality Rate',
-      color: 'from-purple-500 to-pink-600'
     },
     {
       number: '05',
-      
       title: 'Infinite Customization',
       description: 'From floor plans to finishes, every detail can be tailored to your vision. Modular design doesn\'t mean cookie-cutter results.',
       stat: '100%',
       statLabel: 'Customizable',
-      color: 'from-rose-500 to-red-600'
     },
     {
       number: '06',
-      
       title: 'Expert Support & Warranty',
       description: 'Dedicated project managers guide you through every phase. Comprehensive warranties and post-construction support ensure your investment is protected.',
       stat: '10 Years',
       statLabel: 'Warranty',
-      color: 'from-teal-500 to-cyan-600'
     },
   ]
 
   return (
     <section ref={containerRef} className="relative min-h-screen  py-24 overflow-hidden">
-      
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[#886c46] rounded-full blur-[120px]" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#6f5838] rounded-full blur-[120px]" />
-      </div>
-
-      <div className="absolute inset-0 opacity-[0.03]" 
-        style={{
-          backgroundImage: `linear-gradient(#886c46 1px, transparent 1px), linear-gradient(90deg, #886c46 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
-        }}
-      />
+     
 
       <motion.div 
         style={{ y: y1 }}
@@ -139,7 +117,7 @@ const WhyChooseUs = () => {
           >
             Building Excellence,
             <br />
-            <span className="font-bold bg-linear-to-r from-[#d7a661] via-black to-[#d7a661] bg-clip-text text-transparent">
+            <span className="font-bold bg-linear-to-r from-black via-[#886c46] to-black bg-clip-text text-transparent">
               One Module at a Time
             </span>
           </motion.h2>
@@ -163,6 +141,76 @@ const WhyChooseUs = () => {
             className="mx-auto mt-8 h-px bg-linear-to-r from-transparent via-[#886c46] to-transparent"
           />
         </motion.div>
+
+        {/* Premium Image Bento */}
+<motion.div
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.9 }}
+  className="mb-28 grid gap-6 md:grid-cols-4 auto-rows-[200px]"
+>
+
+  <div className="relative md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden group">
+    <Image
+      src="/siteoffice-2.webp"
+      alt="Prefab modular construction facility"
+      fill
+      className="object-cover transition-transform duration-700 group-hover:scale-105"
+    />
+    <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent" />
+    <div className="absolute inset-0 bg-[#886c46]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+    <div className="absolute bottom-8 left-8 right-8 text-white">
+      <p className="text-xs tracking-[0.3em] text-white/70 mb-2">MODULAR ENGINEERING</p>
+      <h3 className={`${playfair.className} text-3xl font-semibold leading-tight`}>
+        Precision Built <br /> For Modern Infrastructure
+      </h3>
+    </div>
+  </div>
+
+  <div className="relative rounded-3xl overflow-hidden group">
+    <Image
+      src="/siteoffice-2.webp"
+      alt="Prefab factory production"
+      fill
+      className="object-cover transition-transform duration-700 group-hover:scale-110"
+    />
+    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-500" />
+
+    <div className="absolute bottom-5 left-5 text-white">
+      <p className="text-xs tracking-widest text-white/70">FACTORY CONTROLLED</p>
+      <p className={`${playfair.className} text-lg font-semibold`}>Higher Quality</p>
+    </div>
+  </div>
+
+  <div className="relative rounded-3xl bg-white border border-[#886c46]/20 p-6 flex flex-col justify-between">
+    <span className="text-xs tracking-widest text-black/40">DELIVERY SPEED</span>
+    <p className={`${playfair.className} text-3xl font-semibold text-[#886c46]`}>
+      60%
+    </p>
+    <span className="text-sm text-black/60">Faster Build Time</span>
+  </div>
+
+  <div className="relative md:col-span-2 rounded-3xl overflow-hidden group">
+    <Image
+      src="/siteoffice-2.webp"
+      alt="Prefab housing project"
+      fill
+      className="object-cover transition-transform duration-700 group-hover:scale-105"
+    />
+    <div className="absolute inset-0 bg-linear-to-r from-black/60 to-transparent" />
+
+    <div className="absolute left-8 top-1/2 -translate-y-1/2 text-white max-w-sm">
+      <p className="text-xs tracking-[0.25em] text-white/70 mb-2">TURNKEY PROJECTS</p>
+      <h4 className={`${playfair.className} text-2xl font-semibold`}>
+        Residential • Commercial • Industrial
+      </h4>
+    </div>
+  </div>
+
+</motion.div>
+
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
@@ -210,71 +258,180 @@ const WhyChooseUs = () => {
   )
 }
 
+
 const FeatureCard = ({ feature, index }: { feature: any, index: number }) => {
   const cardRef = useRef(null)
+  const [isHovered, setIsHovered] = useState(false)
   const isInView = useInView(cardRef, { once: true, margin: "-100px" })
 
   return (
     <motion.div
-        ref={cardRef}
-        initial={{ opacity: 0, y: 50 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.6, delay: index * 0.1 }}
-        className="group relative"
+      ref={cardRef}
+      initial={{ opacity: 0, y: 60, scale: 0.95 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 60, scale: 0.95 }}
+      transition={{ 
+        duration: 0.7, 
+        delay: index * 0.12,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      className="group relative h-full"
     >
-            <div className="absolute inset-0 rounded-2xl bg-[#886c46]/8 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
+      {/* Outer Glow Effect */}
+      <motion.div
+        animate={{
+          opacity: isHovered ? 1 : 0,
+          scale: isHovered ? 1 : 0.9,
+        }}
+        transition={{ duration: 0.4 }}
+        className="absolute -inset-4 rounded-3xl bg-linear-to-br from-[#886c46]/20 to-[#6f5838]/20 blur-2xl"
+      />
 
-            <div className="relative h-full overflow-hidden rounded-2xl border  bg-white backdrop-blur-md transition-all duration-500 border-[#886c46] group-hover:border-[#886c46]/50 group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
-
-                
-                <div className="relative z-10 px-6 py-6">
-
-                    <motion.span
-                        initial={{ opacity: 0, y: -8 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -8 }}
-                        transition={{ duration: 0.6, delay: index * 0.1 + 0.1 }}
-                        className={`${playfair.className} absolute top-5 left-6 text-4xl font-semibold text-[#886c46]`}
-                    >
+      {/* Main Card */}
+      <div className="relative h-full overflow-hidden rounded-3xl border border-[#886c46]/20 bg-linear-to-br from-white via-[#faf8f5] to-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-500 group-hover:border-[#886c46]/40 group-hover:shadow-[0_20px_60px_rgba(136,108,70,0.12)]">
+        
+        {/* Decorative Top Corner */}
+        <div className="absolute right-0 top-0 h-24 w-24 bg-linear-to-br from-[#886c46]/10 to-transparent blur-xl" />
+        
+        {/* Icon Section - Large & Bold */}
+        <div className="relative px-8 pt-8">
+          <motion.div
+            initial={{ scale: 0, rotate: -180 }}
+            animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }}
+            transition={{ 
+              duration: 0.6, 
+              delay: index * 0.12 + 0.2,
+              type: "spring",
+              stiffness: 200
+            }}
+            className="inline-flex"
+          >
+            <div className="relative">
+              {/* Icon Background with Gradient */}
+              <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-[#886c46] to-[#6f5838] blur-lg opacity-50 transition-opacity duration-500 group-hover:opacity-80" />
+              <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-[#886c46]/80 to-[#6f5838]/80 shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                <div className="h-8 w-8 text-white flex justify-center items-center transition-transform duration-500 group-hover:scale-110 leading-none">
+                    <span className={`${merri.className} text-4xl leading-none`}>
                         {feature.number}
-                    </motion.span>
-
-                    <div className="pt-10">
-
-                        <h3 className={`${playfair.className} mb-3 text-xl font-semibold text-black transition-colors duration-300 group-hover:text-[#886c46]`}>
-                        {feature.title}
-                        </h3>
-
-                        <p className={`${merri.className} mb-6 text-sm font-light leading-relaxed text-black/70 max-w-[32ch]`}>
-                        {feature.description}
-                        </p>
-
-                        <div className="flex items-baseline gap-2">
-                        <span className={`${playfair.className} text-2xl font-semibold text-black transition-colors duration-300 group-hover:text-[#886c46]`}>
-                            {feature.stat}
-                        </span>
-                        <span className={`${merri.className} text-xs uppercase tracking-wider text-black/40`}>
-                            {feature.statLabel}
-                        </span>
-                        </div>
-
-                        <motion.div
-                        initial={{ width: 0 }}
-                        animate={isInView ? { width: '50%' } : { width: 0 }}
-                        transition={{ duration: 0.7, delay: index * 0.1 + 0.3 }}
-                        className="mt-5 h-px bg-[#886c46]/70"
-                        />
-
-                    </div>
+                    </span>
                 </div>
-
-
-                <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                    <div className="absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-[#886c46]/15 blur-3xl" />
-                </div>
-
+              </div>
             </div>
+          </motion.div>
+
+          {/* Number Badge - Minimalist */}
+          {/* <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+            transition={{ duration: 0.6, delay: index * 0.12 + 0.3 }}
+            className="absolute right-8 top-8"
+          >
+            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#886c46]/20 bg-white/60 backdrop-blur-sm">
+              <span className={`${playfair.className} text-sm font-semibold text-[#886c46]`}>
+                {feature.number}
+              </span>
+            </div>
+          </motion.div> */}
+        </div>
+
+        {/* Content Section */}
+        <div className="relative px-8 pb-8 pt-6">
+          
+          {/* Title with Accent */}
+          <div className="mb-4">
+            <motion.div
+              initial={{ width: 0 }}
+              animate={isInView ? { width: '40px' } : { width: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.12 + 0.4 }}
+              className="mb-3 h-0.5 rounded-full bg-linear-to-r from-[#886c46] to-transparent"
+            />
+            <h3 className={`${playfair.className} text-2xl font-semibold leading-tight text-[#2a2520] transition-colors duration-300 group-hover:text-[#886c46]`}>
+              {feature.title}
+            </h3>
+          </div>
+
+          {/* Description */}
+          <p className={`${merri.className} mb-8 text-[15px] font-light leading-relaxed text-black`}>
+            {feature.description}
+          </p>
+
+          {/* Stats Display - Large & Impactful */}
+          <div className="mb-6 rounded-2xl border border-[#886c46]/10 bg-linear-to-br from-[#886c46]/5 to-transparent p-6 backdrop-blur-sm transition-all duration-500 group-hover:border-[#886c46]/20 group-hover:bg-[#886c46]/10">
+            <div className="flex items-baseline gap-3">
+              <motion.span
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.12 + 0.5,
+                  type: "spring",
+                  stiffness: 150
+                }}
+                className={`${playfair.className} bg-linear-to-r from-[#886c46] to-[#6f5838] bg-clip-text text-5xl font-bold text-transparent transition-all duration-500 group-hover:scale-110`}
+              >
+                {feature.stat}
+              </motion.span>
+              <div className="flex flex-col">
+                <span className={`${merri.className} text-xs uppercase tracking-[0.15em] text-[#886c46]/90`}>
+                  {feature.statLabel}
+                </span>
+                <span className={`${merri.className} text-xs font-light text-[#5a5248]`}>
+                  Improvement
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Progress Bar */}
+          <div className="relative h-1.5 overflow-hidden rounded-full bg-[#886c46]/10">
+            <motion.div
+              initial={{ width: 0 }}
+              animate={isInView ? { width: '100%' } : { width: 0 }}
+              transition={{ 
+                duration: 1.2, 
+                delay: index * 0.12 + 0.6,
+                ease: "easeOut"
+              }}
+              className="h-full rounded-full bg-linear-to-r from-[#886c46]/12 via-[#a8926d] to-[#886c46]/12"
+            />
+          </div>
+        </div>
+
+        {/* Hover Glow - Bottom Right */}
+        <motion.div
+          animate={{ 
+            opacity: isHovered ? 0.6 : 0,
+            scale: isHovered ? 1 : 0.8,
+          }}
+          transition={{ duration: 0.5 }}
+          className="pointer-events-none absolute -bottom-16 -right-16 h-48 w-48 rounded-full bg-linear-to-br from-[#886c46]/40 to-[#6f5838]/40 blur-3xl"
+        />
+
+        {/* Shimmer Effect on Hover */}
+        <motion.div
+          animate={{
+            x: isHovered ? '100%' : '-100%',
+          }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut"
+          }}
+          className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/20 to-transparent"
+        />
+      </div>
+
+      {/* Floating Shadow */}
+      <motion.div
+        animate={{
+          y: isHovered ? 12 : 0,
+          opacity: isHovered ? 0.3 : 0,
+        }}
+        transition={{ duration: 0.3 }}
+        className="absolute inset-0 -z-10 rounded-3xl bg-[#886c46]/30 blur-2xl"
+      />
     </motion.div>
-)
+  )
 }
 
 export default WhyChooseUs

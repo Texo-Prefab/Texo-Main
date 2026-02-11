@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Merriweather, Playfair_Display } from 'next/font/google'
 import Image from 'next/image'
@@ -122,7 +122,7 @@ const OurProducts = () => {
                     >
                       Prefabricated Solutions
                       <br />
-                      <span className="font-bold bg-linear-to-r from-[#d7a661] via-black to-[#d7a661] bg-clip-text text-transparent">
+                      <span className="font-bold bg-linear-to-r from-black via-[#886c46] to-black bg-clip-text text-transparent">
                         For Every Need
                       </span>
             </motion.h2>
@@ -147,7 +147,7 @@ const OurProducts = () => {
           />
         </motion.div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2">
           {products.map((product, index) => (
             <ProductCard key={product.id} product={product} index={index} />
           ))}
@@ -203,83 +203,380 @@ const OurProducts = () => {
   )
 }
 
-const ProductCard = ({ product, index }: { product: any, index: number }) => {
+
+// const ProductCard = ({ product, index }: { product: any; index: number }) => {
+//   const cardRef = useRef(null)
+//   const [isHovered, setIsHovered] = useState(false)
+//   const isInView = useInView(cardRef, { once: true, margin: '-100px' })
+
+//   return (
+//     <motion.article
+//       ref={cardRef}
+//       initial={{ opacity: 0, y: 60, rotateX: 15 }}
+//       animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : { opacity: 0, y: 60, rotateX: 15 }}
+//       transition={{ 
+//         duration: 0.8, 
+//         delay: index * 0.15,
+//         ease: [0.25, 0.46, 0.45, 0.94]
+//       }}
+//       onHoverStart={() => setIsHovered(true)}
+//       onHoverEnd={() => setIsHovered(false)}
+//       className="group relative perspective-1000"
+//     >
+//       {/* Main Card Container */}
+//       <div className="relative h-full overflow-hidden rounded-3xl bg-linear-to-br from-white via-[#faf8f5] to-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-700 hover:shadow-[0_20px_60px_rgba(136,108,70,0.15)]">
+        
+//         {/* Decorative Corner Accent */}
+//         <div className="absolute right-0 top-0 h-32 w-32 bg-linear-to-br from-[#886c46]/10 to-transparent blur-2xl" />
+        
+//         {/* Image Section with Overlay */}
+//         <div className="relative h-80 overflow-hidden">
+//           <motion.div
+//             animate={{ scale: isHovered ? 1.1 : 1 }}
+//             transition={{ duration: 0.6, ease: 'easeOut' }}
+//             className="h-full w-full"
+//           >
+//             <Image
+//               src={product.image}
+//               alt={product.title}
+//               fill
+//               className="object-cover"
+//             />
+//           </motion.div>
+
+//           {/* Gradient Overlays */}
+//           <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent" />
+//           <div className="absolute inset-0 bg-linear-to-br from-[#886c46]/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+//           {/* Category Badge - Floating Design */}
+//           <motion.div
+//             initial={{ y: -10, opacity: 0 }}
+//             animate={isInView ? { y: 0, opacity: 1 } : { y: -10, opacity: 0 }}
+//             transition={{ delay: index * 0.15 + 0.3 }}
+//             className="absolute left-6 top-6"
+//           >
+//             <div className="relative">
+//               <div className="absolute inset-0 bg-white blur-md" />
+//               <span className={`${merri.className} relative block rounded-2xl border border-white/40 bg-white/90 px-4 py-2 text-[10px] font-light uppercase tracking-[0.2em] text-[#886c46] shadow-lg backdrop-blur-sm`}>
+//                 {product.category}
+//               </span>
+//             </div>
+//           </motion.div>
+
+//           {/* Number Badge - Large Watermark */}
+//           <div className="absolute bottom-6 right-6">
+//             <span className={`${playfair.className} text-8xl font-bold text-white/40 transition-all duration-500 group-hover:text-white/20`}>
+//               {String(index + 1).padStart(2, '0')}
+//             </span>
+//           </div>
+//         </div>
+
+//         {/* Content Section */}
+//         <div className="relative px-8 py-8">
+          
+//           {/* Title with Accent Line */}
+//           <div className="mb-6">
+//             <motion.div
+//               initial={{ width: 0 }}
+//               animate={isInView ? { width: '48px' } : { width: 0 }}
+//               transition={{ duration: 0.6, delay: index * 0.15 + 0.4 }}
+//               className="mb-3 h-1 rounded-full bg-linear-to-r from-[#886c46] to-[#886c46]/40"
+//             />
+//             <h3 className={`${playfair.className} text-3xl font-semibold leading-tight text-[#2a2520] transition-colors duration-300 group-hover:text-[#886c46]`}>
+//               {product.title}
+//             </h3>
+//           </div>
+
+//           {/* Description */}
+//           <p className={`${merri.className} mb-8 text-[15px] font-light leading-relaxed text-[#5a5248]`}>
+//             {product.description}
+//           </p>
+
+//           {/* Features - Modern List Design */}
+//           <div className="mb-8 space-y-3">
+//             {product.features.map((feature: string, idx: number) => (
+//               <motion.div
+//                 key={idx}
+//                 initial={{ opacity: 0, x: -20 }}
+//                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+//                 transition={{ 
+//                   duration: 0.5, 
+//                   delay: index * 0.15 + 0.5 + idx * 0.1 
+//                 }}
+//                 className="group/feature flex items-start gap-3"
+//               >
+//                 <div className="mt-1 shrink-0">
+//                   <div className="flex h-5 w-5 items-center justify-center rounded-full bg-linear-to-br from-[#886c46] to-[#6f5838] shadow-sm transition-transform duration-300 group-hover/feature:scale-110">
+//                     <svg className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+//                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+//                     </svg>
+//                   </div>
+//                 </div>
+//                 <span className={`${merri.className} text-sm font-light text-[#5a5248] transition-colors duration-300 group-hover/feature:text-[#886c46]`}>
+//                   {feature}
+//                 </span>
+//               </motion.div>
+//             ))}
+//           </div>
+
+//           {/* CTA Section - Split Design */}
+//           <div className="flex items-center justify-between border-t border-[#886c46]/10 pt-6">
+            
+//             {/* View Details Text */}
+//             <div className="flex flex-col">
+//               <span className={`${merri.className} text-[10px] uppercase tracking-[0.2em] text-[#886c46]/60`}>
+//                 Project
+//               </span>
+//               <span className={`${merri.className} text-xs font-light text-[#5a5248]`}>
+//                 View Details
+//               </span>
+//             </div>
+
+//             <motion.a
+//               href={product.link}
+//               whileHover={{ scale: 1.05 }}
+//               whileTap={{ scale: 0.95 }}
+//               className="group/btn relative overflow-hidden rounded-full bg-linear-to-r from-[#886c46] to-[#6f5838] px-6 py-3 shadow-lg transition-shadow duration-300 hover:shadow-xl hover:shadow-[#886c46]/20"
+//             >
+//               <span className={`${merri.className} relative z-10 flex items-center gap-2 text-sm font-light tracking-wide text-white`}>
+//                 Explore
+//                 <motion.svg
+//                   animate={{ x: isHovered ? 4 : 0 }}
+//                   transition={{ duration: 0.3 }}
+//                   className="h-4 w-4"
+//                   fill="none"
+//                   viewBox="0 0 24 24"
+//                   stroke="currentColor"
+//                 >
+//                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+//                 </motion.svg>
+//               </span>
+              
+//               {/* Button Gradient Overlay */}
+//               <motion.div
+//                 initial={{ x: '-100%' }}
+//                 whileHover={{ x: 0 }}
+//                 transition={{ duration: 0.3 }}
+//                 className="absolute inset-0 bg-linear-to-r from-[#6f5838] to-[#886c46]"
+//               />
+//             </motion.a>
+//           </div>
+//         </div>
+
+//         {/* Bottom Accent Bar */}
+//         <motion.div
+//           initial={{ scaleX: 0 }}
+//           animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
+//           transition={{ duration: 0.8, delay: index * 0.15 + 0.6, ease: 'easeInOut' }}
+//           className="h-1.5 origin-left bg-linear-to-r from-[#886c46] via-[#a8926d] to-[#886c46]"
+//         />
+
+//         {/* Hover Glow Effect */}
+//         <motion.div
+//           animate={{ opacity: isHovered ? 1 : 0 }}
+//           transition={{ duration: 0.5 }}
+//           className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-[#886c46]/20 blur-3xl"
+//         />
+//       </div>
+
+//       {/* Floating Shadow Effect */}
+//       <motion.div
+//         animate={{
+//           y: isHovered ? 8 : 0,
+//           opacity: isHovered ? 0.4 : 0,
+//         }}
+//         transition={{ duration: 0.3 }}
+//         className="absolute inset-0 -z-10 rounded-3xl bg-[#886c46]/30 blur-xl"
+//       />
+//     </motion.article>
+//   )
+// }
+
+const ProductCard = ({ product, index }: { product: any; index: number }) => {
   const cardRef = useRef(null)
-  const isInView = useInView(cardRef, { once: true, margin: "-100px" })
+  const [isHovered, setIsHovered] = useState(false)
+  const isInView = useInView(cardRef, { once: true, margin: '-100px' })
 
   return (
     <motion.article
       ref={cardRef}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group relative h-full"
+      initial={{ opacity: 0, y: 60, rotateX: 15 }}
+      animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : { opacity: 0, y: 60, rotateX: 15 }}
+      transition={{ 
+        duration: 0.8, 
+        delay: index * 0.15,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      className="group relative perspective-1000 h-full"
     >
-      <div className="relative h-full overflow-hidden rounded-2xl border border-[#886c46]/10 bg-white shadow-md transition-all duration-500 hover:border-[#886c46]/30 hover:shadow-2xl hover:shadow-[#886c46]/10">
+      <div className="relative h-full overflow-hidden rounded-3xl bg-linear-to-br from-white via-[#faf8f5] to-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-700 hover:shadow-[0_20px_60px_rgba(136,108,70,0.15)]">
         
-        {/* Image Container */}
-        <div className="relative h-64 w-full overflow-hidden bg-linear-to-br from-[#e5ddd0] to-[#d4cabe]">
-          {/* Placeholder for product image */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <svg className="h-20 w-20 text-[#886c46]/20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-            </svg>
-          </div> 
-          <Image src={product.image} alt={product.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-          
-          <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-          
-          <div className="absolute left-4 top-4">
-            <span className={`${merri.className} rounded-full bg-white/90 px-3 py-1 text-xs font-light tracking-wide text-[#886c46] backdrop-blur-sm`}>
-              {product.category}
+        {/* Decorative Accent */}
+        <div className="absolute right-0 top-0 h-32 w-32 bg-linear-to-br from-[#886c46]/10 to-transparent blur-2xl" />
+        
+        {/* Image Section */}
+        <div className="relative h-64 overflow-hidden">
+          <motion.div
+            animate={{ scale: isHovered ? 1.1 : 1 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="h-full w-full"
+          >
+            <Image
+              src={product.image}
+              alt={product.title}
+              fill
+              className="object-cover"
+            />
+          </motion.div>
+
+          <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-br from-[#886c46]/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+          {/* Category Badge */}
+          <motion.div
+            initial={{ y: -10, opacity: 0 }}
+            animate={isInView ? { y: 0, opacity: 1 } : { y: -10, opacity: 0 }}
+            transition={{ delay: index * 0.15 + 0.3 }}
+            className="absolute left-6 top-6"
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-white/12 blur-md" />
+              <span className={`${merri.className} relative block rounded-2xl border border-white/40 bg-white/90 px-4 py-2 text-[10px] font-light uppercase tracking-[0.2em] text-[#886c46] shadow-lg backdrop-blur-sm`}>
+                {product.category}
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Number Watermark */}
+          <div className="absolute bottom-6 right-6">
+            <span className={`${playfair.className} text-7xl font-bold text-white/40 transition-all duration-500 group-hover:text-white/60`}>
+              {String(index + 1).padStart(2, '0')}
             </span>
           </div>
         </div>
 
-        <div className="p-6">
-          <h3 className={`${playfair.className} mb-3 text-2xl font-semibold text-[#2a2520] transition-colors duration-300 group-hover:text-[#886c46]`}>
-            {product.title}
-          </h3>
+        {/* Content Section */}
+        <div className="relative px-8 py-6">
+          
+          {/* Title */}
+          <div className="mb-5">
+            <motion.div
+              initial={{ width: 0 }}
+              animate={isInView ? { width: '48px' } : { width: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.15 + 0.4 }}
+              className="mb-3 h-1 rounded-full bg-linear-to-r from-[#886c46] to-[#886c46]/40"
+            />
+            <h3 className={`${playfair.className} text-3xl font-semibold leading-tight text-[#2a2520] transition-colors duration-300 group-hover:text-[#886c46]`}>
+              {product.title}
+            </h3>
+          </div>
 
-          <p className={`${merri.className} mb-4 text-sm font-light leading-relaxed text-[#5a5248]`}>
+          {/* Description */}
+          <p className={`${merri.className} mb-6 text-[15px] font-light leading-relaxed text-[#5a5248]`}>
             {product.description}
           </p>
 
-          <div className="mb-6 flex flex-wrap gap-2">
+          {/* Features */}
+          <div className="mb-6 space-y-2.5">
             {product.features.map((feature: string, idx: number) => (
-              <span
+              <motion.div
                 key={idx}
-                className={`${merri.className} inline-flex items-center gap-1 rounded-full border border-[#886c46]/20 bg-[#f8f5f0] px-3 py-1 text-xs font-light text-[#886c46]`}
+                initial={{ opacity: 0, x: -20 }}
+                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                transition={{ 
+                  duration: 0.5, 
+                  delay: index * 0.15 + 0.5 + idx * 0.1 
+                }}
+                className="group/feature flex items-start gap-3"
               >
-                <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                {feature}
-              </span>
+                <div className="mt-1 shrink-0">
+                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-linear-to-br from-[#886c46] to-[#6f5838] shadow-sm transition-transform duration-300 group-hover/feature:scale-110">
+                    <svg className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                </div>
+                <span className={`${merri.className} text-sm font-light text-[#5a5248] transition-colors duration-300 group-hover/feature:text-[#886c46]`}>
+                  {feature}
+                </span>
+              </motion.div>
             ))}
           </div>
 
-          <motion.a
-            href={product.link}
-            whileHover={{ x: 5 }}
-            className={`${merri.className} group/btn inline-flex items-center gap-2 text-sm font-light text-[#886c46] transition-all hover:gap-3`}
-          >
-            Explore Details
-            <svg className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </motion.a>
+          {/* CTA */}
+          <div className="flex items-center justify-between border-t border-[#886c46]/10 pt-5">
+            
+            <div className="flex flex-col">
+              <span className={`${merri.className} text-[10px] uppercase tracking-[0.2em] text-[#886c46]/60`}>
+                Project
+              </span>
+              <span className={`${merri.className} text-xs font-light text-[#5a5248]`}>
+                View Details
+              </span>
+            </div>
+
+            <motion.a
+              href={product.link}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="group/btn relative overflow-hidden rounded-full bg-linear-to-r from-[#886c46] to-[#6f5838] px-6 py-3 shadow-lg transition-shadow duration-300 hover:shadow-xl hover:shadow-[#886c46]/20"
+            >
+              <span className={`${merri.className} relative z-10 flex items-center gap-2 text-sm font-light tracking-wide text-white`}>
+                Explore
+                <motion.svg
+                  animate={{ x: isHovered ? 4 : 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </motion.svg>
+              </span>
+
+              <motion.div
+                initial={{ x: '-100%' }}
+                whileHover={{ x: 0 }}
+                transition={{ duration: 0.3 }}
+                className="absolute inset-0 bg-linear-to-r from-[#6f5838] to-[#886c46]"
+              />
+            </motion.a>
+          </div>
         </div>
 
+        {/* Bottom Accent */}
         <motion.div
-          initial={{ width: 0 }}
-          animate={isInView ? { width: '100%' } : { width: 0 }}
-          transition={{ duration: 0.8, delay: index * 0.1 + 0.3 }}
-          className="h-1 bg-linear-to-r from-[#886c46] to-[#6f5838]"
+  initial={{ scaleX: 0 }}
+  animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
+  transition={{ duration: 0.8, delay: index * 0.15 + 0.6, ease: 'easeInOut' }}
+  className="absolute bottom-0 left-0 h-1.5 w-full origin-left bg-linear-to-r from-[#886c46] via-[#a8926d] to-[#886c46]"
+/>
+
+
+        {/* Hover Glow */}
+        <motion.div
+          animate={{ opacity: isHovered ? 1 : 0 }}
+          transition={{ duration: 0.5 }}
+          className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-[#886c46]/20 blur-3xl"
         />
       </div>
+
+      {/* Floating Shadow */}
+      <motion.div
+        animate={{
+          y: isHovered ? 8 : 0,
+          opacity: isHovered ? 0.4 : 0,
+        }}
+        transition={{ duration: 0.3 }}
+        className="absolute inset-0 -z-10 rounded-3xl bg-[#886c46]/30 blur-xl"
+      />
     </motion.article>
   )
 }
+
+
 
 export default OurProducts

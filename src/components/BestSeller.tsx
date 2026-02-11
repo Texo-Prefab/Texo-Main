@@ -16,7 +16,6 @@ const playfair = Playfair_Display({
 interface Office {
   id: number
   name: string
-  size: string
   image: string
   features: string[]
   badge?: string
@@ -25,25 +24,22 @@ interface Office {
 const bestSellerOffices: Office[] = [
   {
     id: 1,
-    name: "Executive Studio",
-    size: "120 sq ft",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+    name: "A Frame Cabin",
+    image: "/siteoffice-2.webp",
     features: ["Soundproof walls", "Climate control", "Premium finishes"],
     badge: "Most Popular"
   },
   {
     id: 2,
-    name: "Team Hub",
-    size: "240 sq ft",
-    image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80",
+    name: "Wooden House",
+    image: "/siteoffice-2.webp",
     features: ["Conference setup", "Dual entry", "Smart lighting"],
     badge: "Best Value"
   },
   {
     id: 3,
-    name: "Innovation Pod",
-    size: "180 sq ft",
-    image: "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=800&q=80",
+    name: "Arc Pod",
+    image: "/siteoffice-2.webp",
     features: ["Creative layout", "Glass walls", "Tech integrated"]
   }
 ]
@@ -131,7 +127,7 @@ const HeaderSection = () => {
       >
         Our Most Loved Offices,
         <br />
-        <span className="font-bold bg-linear-to-r from-[#d7a661] via-black to-[#d7a661] bg-clip-text text-transparent">
+        <span className="font-bold bg-linear-to-r from-black via-[#886c46] to-black bg-clip-text text-transparent">
           Designed for Excellence
         </span>
       </motion.h2>
@@ -208,9 +204,7 @@ const OfficeCard = ({ office, index }: { office: Office; index: number }) => {
               {office.name}
             </h3>
             
-            <div className="mb-5">
-              <span className={`${merri.className} text-black/60 text-sm font-light`}>{office.size}</span>
-            </div>
+            
 
             <ul className="space-y-2.5 mb-6">
               {office.features.map((feature, i) => (

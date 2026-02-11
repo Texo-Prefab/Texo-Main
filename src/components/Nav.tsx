@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { Merriweather } from 'next/font/google'
-import { Facebook, Instagram, Mail, Phone, Youtube, Home, Building2, Factory, Briefcase, FileText, Package, ChevronDown, ChevronRight, Menu } from 'lucide-react'
+import { Home, Building2, Factory, Briefcase, FileText, Package, ChevronDown, ChevronRight, Menu } from 'lucide-react'
 
 const merri = Merriweather({
   subsets: ['latin'],
@@ -32,7 +32,7 @@ const Nav = () => {
           scrolled ? 'opacity-0 -translate-y-full pointer-events-none' : 'opacity-100 translate-y-0'
         }`}
       >
-        <div className="border-b border-white/10 bg-black/30 backdrop-blur-sm">
+        {/* <div className="border-b border-white/10 bg-black/30 backdrop-blur-sm">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
             <div className="flex items-center gap-6 text-xs text-white/70">
               <span className="flex items-center gap-2">
@@ -56,7 +56,7 @@ const Nav = () => {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="bg-black/20 backdrop-blur-md">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
@@ -83,73 +83,73 @@ const Nav = () => {
                   
                   <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#886c46] transition-all duration-300 group-hover:w-full"></span>
                   
-                  {/* Main Dropdown */}
                   <div className="absolute left-0 top-full pt-6 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-100">
-                    <div className="min-w-70 rounded-2xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-2xl">
+                    <div className="min-w-70 rounded-2xl bg-[#111110] backdrop-blur-xl border border-white/10 shadow-2xl">
                       <ul className="py-2">
-                        {/* Modular Buildings */}
                         <li className="group/item relative px-2">
                           <div className="flex items-center justify-between px-4 py-3 hover:bg-white/5 transition-colors rounded-lg cursor-pointer">
                             <div className="flex items-center gap-3">
                               <div className="h-8 w-8 rounded-lg bg-linear-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
                                 <Home className="w-4 h-4 text-white" />
                               </div>
-                              <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Modular Buildings</span>
+                              <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Wooden Series</span>
                             </div>
                             <ChevronRight className="w-4 h-4 text-white/40 group-hover/item:text-[#886c46] transition-all duration-300 group-hover/item:translate-x-1" />
                           </div>
                           
-                          {/* Sub-dropdown */}
-                          <div className="absolute left-full top-0 ml-2 min-w-55 rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
+                          <div className="absolute left-full top-0 ml-2 min-w-55 rounded-xl bg-[#111110] backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
                             <ul className="py-2">
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Container Modules</a></li>
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Expandable Units</a></li>
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Multi-Story Modules</a></li>
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Custom Designs</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">A-Frame Cabin</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Arc Pod</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Wooden House</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Smart House</a></li>
                             </ul>
                           </div>
                         </li>
 
-                        {/* Prefab Homes */}
                         <li className="group/item relative px-2">
                           <div className="flex items-center justify-between px-4 py-3 hover:bg-white/5 transition-colors rounded-lg cursor-pointer">
                             <div className="flex items-center gap-3">
                               <div className="h-8 w-8 rounded-lg bg-linear-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
                                 <Building2 className="w-4 h-4 text-white" />
                               </div>
-                              <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Prefab Homes</span>
+                              <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Portable Solutions</span>
                             </div>
                             <ChevronRight className="w-4 h-4 text-white/40 group-hover/item:text-[#886c46] transition-all duration-300 group-hover/item:translate-x-1" />
                           </div>
                           
-                          <div className="absolute left-full top-0 ml-2 min-w-55 rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
+                          <div className="absolute left-full top-0 ml-2 min-w-55 rounded-xl bg-[#111110] backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
                             <ul className="py-2">
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Studio Homes</a></li>
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Family Villas</a></li>
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Vacation Cottages</a></li>
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Luxury Residences</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Porta Cabin</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Farmhouse</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Portable Cabin</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Bunk House Cabin</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Containers House</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Modular Toilet</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Mobile Toilet</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Portable Toilet Cabin</a></li>
                             </ul>
                           </div>
                         </li>
 
-                        {/* Industrial */}
                         <li className="group/item relative px-2">
                           <div className="flex items-center justify-between px-4 py-3 hover:bg-white/5 transition-colors rounded-lg cursor-pointer">
                             <div className="flex items-center gap-3">
                               <div className="h-8 w-8 rounded-lg bg-linear-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
                                 <Factory className="w-4 h-4 text-white" />
                               </div>
-                              <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Industrial</span>
+                              <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Prefab Solutions</span>
                             </div>
                             <ChevronRight className="w-4 h-4 text-white/40 group-hover/item:text-[#886c46] transition-all duration-300 group-hover/item:translate-x-1" />
                           </div>
                           
-                          <div className="absolute left-full top-0 ml-2 min-w-55 rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
+                          <div className="absolute left-full top-0 ml-2 min-w-55 rounded-xl bg-[#111110] backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
                             <ul className="py-2">
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Warehouses</a></li>
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Workshops</a></li>
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Factory Units</a></li>
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Storage Facilities</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Prefab Site Offices</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Prefab Structures</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Prefabricated Accommodation</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Prefab House</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Prefab Schools</a></li>
                             </ul>
                           </div>
                         </li>
@@ -160,39 +160,37 @@ const Nav = () => {
                               <div className="h-8 w-8 rounded-lg bg-linear-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
                                 <Briefcase className="w-4 h-4 text-white" />
                               </div>
-                              <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Commercial</span>
+                              <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Specialized Structures</span>
                             </div>
                             <ChevronRight className="w-4 h-4 text-white/40 group-hover/item:text-[#886c46] transition-all duration-300 group-hover/item:translate-x-1" />
                           </div>
                           
-                          <div className="absolute left-full top-0 ml-2 min-w-55 rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
+                          <div className="absolute left-full top-0 ml-2 min-w-55 rounded-xl bg-[#111110] backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
                             <ul className="py-2">
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Office Spaces</a></li>
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Retail Stores</a></li>
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Restaurants</a></li>
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Showrooms</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Clinic Cabin</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Restaurant Cabin</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Smoking Room</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Electrical Room</a></li>
                             </ul>
                           </div>
                         </li>
 
-                        {/* Site Offices */}
                         <li className="group/item relative px-2">
                           <div className="flex items-center justify-between px-4 py-3 hover:bg-white/5 transition-colors rounded-lg cursor-pointer">
                             <div className="flex items-center gap-3">
                               <div className="h-8 w-8 rounded-lg bg-linear-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
                                 <FileText className="w-4 h-4 text-white" />
                               </div>
-                              <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Site Offices</span>
+                              <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Security Solutions</span>
                             </div>
                             <ChevronRight className="w-4 h-4 text-white/40 group-hover/item:text-[#886c46] transition-all duration-300 group-hover/item:translate-x-1" />
                           </div>
                           
-                          <div className="absolute left-full top-0 ml-2 min-w-55 rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
+                          <div className="absolute left-full top-0 ml-2 min-w-55 rounded-xl bg-[#111110] backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
                             <ul className="py-2">
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Project Offices</a></li>
                               <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Security Cabins</a></li>
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Meeting Rooms</a></li>
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Worker Facilities</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Toll Booth</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">ATM Cabin</a></li>
                             </ul>
                           </div>
                         </li>
@@ -203,23 +201,21 @@ const Nav = () => {
                               <div className="h-8 w-8 rounded-lg bg-linear-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shrink-0">
                                 <Package className="w-4 h-4 text-white" />
                               </div>
-                              <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">Storage Units</span>
+                              <span className="text-sm text-white/80 group-hover/item:text-[#886c46] transition-colors font-light">PUF Insulated Cabin</span>
                             </div>
                             <ChevronRight className="w-4 h-4 text-white/40 group-hover/item:text-[#886c46] transition-all duration-300 group-hover/item:translate-x-1" />
                           </div>
                           
-                          <div className="absolute left-full top-0 ml-2 min-w-55 rounded-xl bg-black/95 backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
+                          <div className="absolute left-full top-0 ml-2 min-w-55 rounded-xl bg-[#111110] backdrop-blur-xl border border-white/10 shadow-xl opacity-0 invisible -translate-x-2 group-hover/item:opacity-100 group-hover/item:visible group-hover/item:translate-x-0 transition-all duration-300">
                             <ul className="py-2">
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Tool Sheds</a></li>
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Equipment Storage</a></li>
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Cold Storage</a></li>
-                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Archive Rooms</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Control Room</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Solar Control Room</a></li>
+                              <li><a href="#" className="block px-4 py-2.5 text-sm text-white/60 hover:text-[#886c46] hover:bg-white/5 transition-all font-light hover:translate-x-1 rounded-lg mx-2">Clean Room</a></li>
                             </ul>
                           </div>
                         </li>
                       </ul>
 
-                      {/* CTA Footer */}
                       <div className="border-t border-white/5 p-4 bg-linear-to-r from-[#886c46]/5 to-transparent">
                         <button className="w-full rounded-lg px-4 py-2.5 text-xs font-light tracking-wider bg-linear-to-r from-[#886c46] to-[#6f5838] hover:from-[#6f5838] hover:to-[#886c46] transition-all duration-300 text-white shadow-lg hover:shadow-[#886c46]/20">
                           View All Products
