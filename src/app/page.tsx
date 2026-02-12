@@ -2,7 +2,9 @@ import BestSeller from "@/components/BestSeller";
 import BlogsSection from "@/components/Blogs";
 import CustomerReview from "@/components/CustomerReview";
 import Hero from "@/components/Hero";
+import OurClients from "@/components/OurClients";
 import OurPortfolio from "@/components/OurPortfolio";
+import OurProcess from "@/components/OurProcess";
 import OurProducts from "@/components/Ourproducts";
 import VlogsSection from "@/components/Vlogs";
 import WhyChooseUs from "@/components/WhyChooseus";
@@ -26,8 +28,10 @@ export default function Home() {
         <Hero />
         <BestSeller />
         <OurProducts />
+        <OurProcess />
         <WhyChooseUs />
         <OurPortfolio />
+        <OurClients />
         <BlogsSection />
         <VlogsSection />
         <CustomerReview />

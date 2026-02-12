@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { Merriweather } from 'next/font/google'
 import { Home, Building2, Factory, Briefcase, FileText, Package, ChevronDown, ChevronRight, Menu } from 'lucide-react'
+import Link from 'next/link'
 
 const merri = Merriweather({
   subsets: ['latin'],
@@ -58,7 +59,7 @@ const Nav = () => {
           </div>
         </div> */}
 
-        <div className="bg-black/20 backdrop-blur-md">
+        <div className="bg-black/50 backdrop-blur-md border border-black">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
             
             <div className="shrink-0">
@@ -67,12 +68,12 @@ const Nav = () => {
 
             <nav className="hidden lg:block">
               <ul className={`${merri.className} flex items-center gap-1`}>
-                <li className="group relative px-4 py-2">
-                  <a href="#" className="text-sm font-light tracking-wide text-white transition-colors duration-300 group-hover:text-[#886c46]">
+                <Link href={'/'} className="group relative px-4 py-2">
+                  <span  className="text-sm font-light tracking-wide text-white transition-colors duration-300 group-hover:text-[#886c46]">
                     HOME
-                  </a>
+                  </span>
                   <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#886c46] transition-all duration-300 group-hover:w-full"></span>
-                </li>
+                </Link>
                 <li className="group relative px-4 py-2">
                   <div className="flex items-center gap-1 cursor-pointer">
                     <span className="text-sm font-light tracking-wide text-white transition-colors duration-300 group-hover:text-[#886c46]">
@@ -218,7 +219,7 @@ const Nav = () => {
 
                       <div className="border-t border-white/5 p-4 bg-linear-to-r from-[#886c46]/5 to-transparent">
                         <button className="w-full rounded-lg px-4 py-2.5 text-xs font-light tracking-wider bg-linear-to-r from-[#886c46] to-[#6f5838] hover:from-[#6f5838] hover:to-[#886c46] transition-all duration-300 text-white shadow-lg hover:shadow-[#886c46]/20">
-                          View All Products
+                          <Link href={'/products'}>View All Products</Link>
                         </button>
                       </div>
                     </div>
@@ -281,47 +282,48 @@ const Nav = () => {
           
           <div className="absolute inset-0 rounded-full border border-[#886c46] blur-xl bg-[#886c46]/10"></div>
 
-          <ul 
-            className={`${merri.className}
-            relative
-            flex justify-center items-center gap-8
-            px-10 py-4
-            rounded-full
-            bg-white/80 backdrop-blur-xl
-            border border-white/40
-            shadow-[0_10px_40px_rgba(0,0,0,0.25)]
-            before:absolute before:inset-0 before:rounded-full
-            before:border before:border-[#886c46]/20
-            before:opacity-60
-            `}
-          >
-            
-            {[
-              "HOME",
-              "PRODUCTS",
-              "FEATURES",
-              "CONTACT US"
-            ].map((item) => (
-              <li
-                key={item}
-                className="
-                relative cursor-pointer
-                text-[13px] tracking-[0.15em]
-                text-black/80
-                transition-all duration-300
-                hover:text-[#886c46]
-                after:absolute after:left-1/2 after:-bottom-1.5
-                after:h-px after:w-0
-                after:bg-[#886c46]
-                after:transition-all after:duration-300
-                hover:after:left-0 hover:after:w-full
-                "
-              >
-                {item}
-              </li>
-            ))}
+<ul 
+  className={`${merri.className}
+  relative
+  flex justify-center items-center gap-8
+  px-10 py-4
+  rounded-full
+  bg-white/80 backdrop-blur-xl
+  border border-white/40
+  shadow-[0_10px_40px_rgba(0,0,0,0.25)]
+  before:absolute before:inset-0 before:rounded-full
+  before:border before:border-[#886c46]/20
+  before:opacity-60
+  `}
+>
+  {[
+    { label: "HOME", href: "/" },
+    { label: "PRODUCTS", href: "/products" },
+    { label: "FEATURES", href: "/features" },
+    { label: "CONTACT US", href: "/contact" },
+  ].map((item) => (
+    <li key={item.label}>
+      <Link
+        href={item.href}
+        className="
+        relative cursor-pointer
+        text-[13px] tracking-[0.15em]
+        text-black/80
+        transition-all duration-300
+        hover:text-[#886c46]
+        after:absolute after:left-1/2 after:-bottom-1.5
+        after:h-px after:w-0
+        after:bg-[#886c46]
+        after:transition-all after:duration-300
+        hover:after:left-0 hover:after:w-full
+        "
+      >
+        {item.label}
+      </Link>
+    </li>
+  ))}
+</ul>
 
-          </ul>
         </div>
       </div>
 

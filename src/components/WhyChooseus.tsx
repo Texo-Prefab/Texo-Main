@@ -34,36 +34,36 @@ const WhyChooseUs = () => {
     },
     {
       number: '02',
-      title: 'Sustainable & Eco-Friendly',
-      description: 'Factory-controlled production minimizes waste and energy consumption. Our modular designs incorporate recycled materials and green technologies.',
+      title: 'Precision Engineering',
+      description: 'At Texo, every structure is crafted using advanced CNC and robotic fabrication, achieving tolerances of under 1 mm. This results in exceptional build consistency and reduces on-site errors by over 30%.',
       stat: '40%',
       statLabel: 'Less Waste',
     },
     {
       number: '03',
-      title: 'Cost-Effective Solutions',
-      description: 'Streamlined manufacturing and reduced labor costs translate to savings for you. Predictable pricing with no surprise expenses or delays.',
+      title: 'Modular Scalability',
+      description: 'Our plug-and-play modular system is designed for absolute flexibility. Whether you need to scale, relocate, or reconfigure, Texo units can be expanded or reassembled in under 7-10 day with zero compromise.',
       stat: '30%',
       statLabel: 'Savings',
     },
     {
       number: '04',
-      title: 'Superior Quality Control',
-      description: 'Every module is manufactured in our controlled facility, ensuring consistent quality standards that exceed traditional construction methods.',
+      title: 'Smart Material Usage',
+      description: 'We use galvanized steel frames and high-grade R-25 insulation to ensure every Texo build lasts over 25 years. Engineered to endure tough climates, our structures withstand wind loads up to 150 km/h.',
       stat: '99.8%',
       statLabel: 'Quality Rate',
     },
     {
       number: '05',
-      title: 'Infinite Customization',
-      description: 'From floor plans to finishes, every detail can be tailored to your vision. Modular design doesn\'t mean cookie-cutter results.',
+      title: 'Rapid Deployment',
+      description: 'With over 80% of work done off-site, Texo drastically shortens your build timeline. Our streamlined prefab system allows us to deliver and install complete, ready-to-use units faster than traditional methods ever could.',
       stat: '100%',
       statLabel: 'Customizable',
     },
     {
       number: '06',
-      title: 'Expert Support & Warranty',
-      description: 'Dedicated project managers guide you through every phase. Comprehensive warranties and post-construction support ensure your investment is protected.',
+      title: 'Eco-Conscious Design',
+      description: 'Texo builds are thermally optimized and energy-efficient by design. Our smart construction methods reduce overall material waste and lower energy usage by up to 30%, supporting a cleaner, more sustainable future.',
       stat: '10 Years',
       statLabel: 'Warranty',
     },
@@ -88,14 +88,14 @@ const WhyChooseUs = () => {
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.8 }}
           className="mb-20 text-center"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6 }}
             className="mb-6 inline-block"
           >
@@ -111,7 +111,7 @@ const WhyChooseUs = () => {
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className={`${playfair.className} mb-6 text-4xl font-light leading-tight text-black md:text-5xl lg:text-6xl`}
           >
@@ -125,7 +125,7 @@ const WhyChooseUs = () => {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className={`${merri.className} mx-auto max-w-2xl text-base font-light leading-relaxed text-black/80`}
           >
@@ -136,7 +136,7 @@ const WhyChooseUs = () => {
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: '100px' }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 1, delay: 0.6 }}
             className="mx-auto mt-8 h-px bg-linear-to-r from-transparent via-[#886c46] to-transparent"
           />
@@ -146,7 +146,7 @@ const WhyChooseUs = () => {
 <motion.div
   initial={{ opacity: 0, y: 40 }}
   whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
+  viewport={{ once: false }}
   transition={{ duration: 0.9 }}
   className="mb-28 grid gap-6 md:grid-cols-4 auto-rows-[200px]"
 >
@@ -221,7 +221,7 @@ const WhyChooseUs = () => {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-20 text-center"
         >

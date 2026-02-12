@@ -16,62 +16,68 @@ const playfair = Playfair_Display({
 
 const OurProducts = () => {
   const products = [
-    {
-      id: 1,
-      category: 'Residential',
-      title: 'Wooden Series',
-      description: 'Discover our signature luxury line, including the Arc Pod, A-Frame Cabin, Smart House, and other modular wooden structures. Designed to blend elegance, comfort, and sustainability.',
-      image: '/siteoffice-2.webp',
-      features: ['Quick Assembly', 'Energy Efficient', 'Custom Layouts'],
-      link: '/products/modular-homes'
-    },
-    {
-      id: 2,
-      category: 'Residential',
-      title: 'Prefab Solutions',
-      description: 'Whether it’s a farmhouse, site office, or full-scale prefab house, our modular builds deliver speed, flexibility, and premium design.',
-      image: '/siteoffice-2.webp',
-      features: ['Premium Materials', 'Spa Integration', 'Smart Home'],
-      link: '/products/luxury-villas'
-    },
-    {
-      id: 3,
-      category: 'Commercial',
-      title: 'Portable Solutions',
-      description: 'Explore porta cabins, container houses, bunkhouses, mobile toilets, modular restrooms, and compact office setups, built for convenience and quick deployment.',
-      image: '/siteoffice-2.webp',
-      features: ['Scalable Design', 'Tech-Ready', 'Modern Interiors'],
-      link: '/products/office-spaces'
-    },
-    {
-      id: 4,
-      category: 'Commercial',
-      title: 'Specialized Structures',
-      description: 'Smartly designed prefab schools, clinics, restaurants, factory cabins, electrical rooms, smoking zones, and more, all tailored to perform and built to scale.',
-      image: '/siteoffice-2.webp',
-      features: ['Brand Customization', 'Flexible Layout', 'Quick Setup'],
-      link: '/products/retail-stores'
-    },
-    {
-      id: 6,
-      category: 'Industrial',
-      title: 'Security Solutions',
-      description: 'Purpose-built manufacturing facilities with heavy-duty construction and industrial-grade systems.',
-      image: '/siteoffice-2.webp',
-      features: ['Heavy Load', 'Ventilation', 'Power Systems'],
-      link: '/products/factory-units'
-    },
-    {
-      id: 5,
-      category: 'Industrial',
-      title: 'PUF Insulated Cabins',
-      description: 'From solar control rooms to clean rooms and health centers, our PUF cabins ensure thermal protection, energy efficiency, and structural reliability.',
-      image: '/siteoffice-2.webp',
-      features: ['High Capacity', 'Climate Control', 'Loading Docks'],
-      link: '/products/warehouses'
-    },
-    
-  ]
+  {
+    id: 1,
+    category: 'Residential',
+    title: 'Wooden Series',
+    description:
+      'Premium modular wooden homes crafted for modern living. Our Wooden Series combines natural aesthetics, structural strength, and functional design for residential comfort and long-term durability.',
+    image: '/siteoffice-2.webp',
+    features: ['Quick Installation', 'Energy Efficient', 'Customizable Design'],
+    link: '/products/modular-homes'
+  },
+  {
+    id: 2,
+    category: 'Residential',
+    title: 'Prefab Solutions',
+    description:
+      'Versatile prefab housing solutions designed for rapid construction and flexible use. Ideal for farmhouses, site offices, and modular residences built with precision and efficiency.',
+    image: '/siteoffice-2.webp',
+    features: ['Durable Structure', 'Flexible Layouts', 'Low Maintenance'],
+    link: '/products/luxury-villas'
+  },
+  {
+    id: 3,
+    category: 'Commercial',
+    title: 'Portable Solutions',
+    description:
+      'Smart portable cabins and modular units engineered for mobility and convenience. Suitable for temporary offices, workforce housing, and compact commercial setups.',
+    image: '/siteoffice-2.webp',
+    features: ['Compact Design', 'Quick Deployment', 'Weather Resistant'],
+    link: '/products/office-spaces'
+  },
+  {
+    id: 4,
+    category: 'Commercial',
+    title: 'Specialized Structures',
+    description:
+      'Custom-built modular structures tailored for specific commercial and institutional needs. Designed for efficiency, scalability, and reliable performance.',
+    image: '/siteoffice-2.webp',
+    features: ['Scalable Solutions', 'Custom Configurations', 'High Durability'],
+    link: '/products/retail-stores'
+  },
+  {
+    id: 5,
+    category: 'Industrial',
+    title: 'PUF Insulated Cabins',
+    description:
+      'Thermally insulated modular cabins built for temperature control and structural stability. Ideal for controlled environments requiring energy efficiency and strength.',
+    image: '/siteoffice-2.webp',
+    features: ['Thermal Insulation', 'Energy Efficient', 'Robust Construction'],
+    link: '/products/warehouses'
+  },
+  {
+    id: 6,
+    category: 'Industrial',
+    title: 'Security Solutions',
+    description:
+      'Secure and compact modular units designed for monitoring, guarding, and controlled access environments. Built with reinforced materials for dependable protection.',
+    image: '/siteoffice-2.webp',
+    features: ['Strong Build', 'Weather Resistant', 'Easy Installation'],
+    link: '/products/factory-units'
+  }
+]
+
 
   return (
     <section className="relative min-h-screen py-24 overflow-hidden">
@@ -94,14 +100,14 @@ const OurProducts = () => {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.8 }}
           className="mb-20 text-center"
         >
           <motion.div
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
+                      viewport={{ once: false }}
                       transition={{ duration: 0.6 }}
                       className="mb-6 inline-block"
                     >
@@ -116,7 +122,7 @@ const OurProducts = () => {
           <motion.h2
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
+                      viewport={{ once: false }}
                       transition={{ duration: 0.8, delay: 0.2 }}
                       className={`${playfair.className} mb-6 text-4xl font-light leading-tight text-black md:text-5xl lg:text-6xl`}
                     >
@@ -130,7 +136,7 @@ const OurProducts = () => {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className={`${merri.className} mx-auto max-w-2xl text-base font-light leading-relaxed text-[#5a5248]`}
           >
@@ -141,7 +147,7 @@ const OurProducts = () => {
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: '100px' }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 1, delay: 0.6 }}
             className="mx-auto mt-8 h-px bg-linear-to-r from-transparent via-[#886c46] to-transparent"
           />
@@ -153,39 +159,6 @@ const OurProducts = () => {
           ))}
         </div>
 
-        {/* <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-24 text-center"
-        >
-          <div className="mx-auto max-w-3xl rounded-3xl border border-[#886c46]/20 bg-white/40 p-12 shadow-xl backdrop-blur-sm">
-            <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-br from-[#886c46] to-[#6f5838] shadow-lg">
-              <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-              </svg>
-            </div>
-            <h3 className={`${playfair.className} mb-3 text-3xl font-semibold text-[#2a2520]`}>
-              Don{`'`}t See What You Need?
-            </h3>
-            <p className={`${merri.className} mb-8 text-base font-light text-[#5a5248]`}>
-              We specialize in custom solutions. Let{`'`}s discuss your unique requirements 
-              and create a tailored prefab structure just for you.
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className={`${merri.className} group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-linear-to-r from-[#886c46] to-[#6f5838] px-8 py-4 text-sm font-light tracking-wide text-white shadow-lg transition-all hover:shadow-xl hover:shadow-[#886c46]/20`}
-            >
-              <span className="relative z-10">Request Custom Quote</span>
-              <svg className="relative z-10 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-              <div className="absolute inset-0 z-0 bg-linear-to-r from-[#6f5838] to-[#886c46] opacity-0 transition-opacity group-hover:opacity-100" />
-            </motion.button>
-          </div>
-        </motion.div> */}
         <div className="w-full flex flex-col justify-center items-center mt-12 gap-4 text-center">
   
   <p className="max-w-2xl text-sm md:text-base text-black/70 leading-relaxed">

@@ -77,7 +77,7 @@ export default function OurPortfolio() {
         <motion.div
           initial={{ opacity: 0.5, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.9, ease: "easeOut" }}
           className="mb-16 max-w-screen text-center md:text-left"
         >
@@ -102,7 +102,7 @@ export default function OurPortfolio() {
   }}
   initial="hidden"
   whileInView="visible"
-  viewport={{ once: true }}
+  viewport={{ once: false }}
   className="
     grid grid-cols-1 md:grid-cols-4 auto-rows-[260px] 
     gap-6

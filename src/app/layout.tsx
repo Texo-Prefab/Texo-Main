@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Nav from "@/components/Nav";
+import PremiumFooter from "@/components/Footer";
 
 
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       >
         <Nav />
         {children}
+        <PremiumFooter />
       </body>
     </html>
   );
