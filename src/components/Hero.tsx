@@ -143,7 +143,7 @@ const Hero = () => {
         <div className="grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
           {/* Left Column - Main Content */}
           <div className="max-w-2xl">
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -156,13 +156,13 @@ const Hero = () => {
                 </span>
                 REVOLUTIONIZING CONSTRUCTION SINCE 2015
               </span>
-            </motion.div>
+            </motion.div> */}
             
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className={`${playfair.className} mb-6 text-4xl font-light leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl`}
+              className={`${playfair.className} mb-6 text-4xl font-light leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl mt-12`}
             >
               Build Your Dream
               <br />
@@ -259,7 +259,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="hidden lg:flex justify-end"
           >
-            <div className="relative w-full max-w-md">
+            <div className="relative w-full max-w-xs">
               {/* Decorative Elements */}
               <div className="absolute -top-6 -left-6 h-32 w-32 rounded-full bg-[#886c46]/20 blur-3xl" />
               <div className="absolute -bottom-6 -right-6 h-32 w-32 rounded-full bg-[#6f5838]/20 blur-3xl" />
@@ -281,7 +281,7 @@ const Hero = () => {
               {/* Product Card - Container stays, content changes */}
               <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#f8f5f0] shadow-2xl backdrop-blur-sm">
                 {/* Product Image - Animated */}
-                <div className="relative h-80 overflow-hidden">
+                <div className="relative h-60 overflow-hidden">
                   <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent z-10" />
                   
                   <AnimatePresence mode="wait">
