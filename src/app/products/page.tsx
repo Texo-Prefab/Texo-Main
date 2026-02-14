@@ -110,21 +110,21 @@ const Products = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white mt-12">
-      {/* Background Effects */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 opacity-[0.015]"
-          style={{
-            backgroundImage: `radial-gradient(circle, #886c46 1px, transparent 1px)`,
-            backgroundSize: '40px 40px'
-          }}
-        />
-        <div className="absolute top-0 -left-40 w-96 h-96 bg-[#886c46]/10 rounded-full blur-[150px]" />
-        <div className="absolute bottom-40 -right-40 w-150 h-150 bg-[#886c46]/10 rounded-full blur-[150px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-[#886c46]/5 rounded-full blur-[200px]" />
-      </div>
+    <div className="min-h-screen bg-white">
+      
 
-      <section ref={heroRef} className="relative pt-32 pb-20 px-6 md:px-12 overflow-hidden">
+      <section ref={heroRef} className="relative pt-32 mt-12 pb-20 px-6 md:px-12 overflow-hidden h-screen">
+        <div className="absolute inset-0 z-10">
+          <Image
+            src="/products-hero.png"   
+            alt="Background"
+            fill
+            priority
+            className="object-cover"
+          />
+          {/* Optional overlay for readability */}
+          <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]" />
+        </div>
         <div className="max-w-7xl mx-auto">
           
           {/* Decorative Lines */}
@@ -143,7 +143,7 @@ const Products = () => {
               transition={{ duration: 0.6 }}
               className="mb-8 inline-block"
             >
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#886c46]/30 bg-[#886c46]/10 px-6 py-2.5 text-xs font-light tracking-[0.3em] text-[#886c46] backdrop-blur-sm mt-4">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#886c46]/30 bg-[#886c46]/80 px-6 py-2.5 text-xs font-light tracking-[0.3em] text-[#ffffff] backdrop-blur-sm mt-4">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#886c46] opacity-75"></span>
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-[#886c46]"></span>
@@ -156,11 +156,11 @@ const Products = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isHeroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className={`${playfair.className} mb-6 text-6xl md:text-7xl lg:text-8xl font-light leading-[0.95] text-black`}
+              className={`${playfair.className} mb-6 text-6xl md:text-7xl lg:text-8xl font-light leading-[0.95] text-white`}
             >
               Premium
               <br />
-              <span className="font-bold bg-linear-to-r from-black via-[#886c46] to-black bg-clip-text text-transparent">
+              <span className="font-bold bg-linear-to-r from-white via-[#886c46] to-white bg-clip-text text-transparent">
                 Prefab Solutions
               </span>
             </motion.h1>
@@ -169,7 +169,7 @@ const Products = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isHeroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className={`${merri.className} max-w-2xl text-lg font-light leading-relaxed text-black/70 mb-12`}
+              className={`${merri.className} max-w-2xl text-lg font-light leading-relaxed text-white/70 mb-12`}
             >
               Explore our comprehensive range of modular structures, engineered for excellence 
               and designed to exceed expectations in every environment.
@@ -182,13 +182,13 @@ const Products = () => {
               className="max-w-2xl relative"
             >
               <div className="relative">
-                <Search className="absolute left-6 top-1/2 -translate-y-1/2 z-10 w-5 h-5 text-black/60" />
+                <Search className="absolute left-6 top-1/2 -translate-y-1/2 z-10 w-5 h-5 text-white/60" />
                 <input
                   type="text"
                   placeholder="Search products..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className={`${merri.className} w-full pl-16 pr-6 py-5 bg-black/5 backdrop-blur-2xl border border-black/10 rounded-2xl text-black placeholder-black/40 focus:outline-none focus:border-[#886c46] focus:bg-black/10 transition-all duration-300 font-light`}
+                  className={`${merri.className} w-full pl-16 pr-6 py-5 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl text-white placeholder-white/40 focus:outline-none focus:border-[#886c46] focus:bg-white/10 transition-all duration-300 font-light`}
                 />
               </div>
             </motion.div>
@@ -204,13 +204,17 @@ const Products = () => {
         />
       </section>
 
-      {/* <section className="relative py-12 px-6 md:px-12 border-b border-black/5">
+      <section className="relative py-12 px-6 md:px-12 border-b border-black/5">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-6 overflow-x-auto pb-4 scrollbar-hide">
+          <div className="flex flex-wrap items-center gap-4">
+            
             <div className="flex items-center gap-2 shrink-0">
               <Filter className="w-4 h-4 text-[#886c46]" />
-              <span className={`${merri.className} text-sm text-black/60 font-light`}>Filter:</span>
+              <span className={`${merri.className} text-sm text-black/60 font-light`}>
+                Filter:
+              </span>
             </div>
+
             {categories.map((category) => (
               <motion.button
                 key={category}
@@ -235,43 +239,7 @@ const Products = () => {
             ))}
           </div>
         </div>
-      </section> */}
-      <section className="relative py-12 px-6 md:px-12 border-b border-black/5">
-  <div className="max-w-7xl mx-auto">
-    <div className="flex flex-wrap items-center gap-4">
-      
-      <div className="flex items-center gap-2 shrink-0">
-        <Filter className="w-4 h-4 text-[#886c46]" />
-        <span className={`${merri.className} text-sm text-black/60 font-light`}>
-          Filter:
-        </span>
-      </div>
-
-      {categories.map((category) => (
-        <motion.button
-          key={category}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => setSelectedCategory(category)}
-          className={`${merri.className} relative px-6 py-3 rounded-full text-sm font-light tracking-wide transition-all duration-300 whitespace-nowrap ${
-            selectedCategory === category
-              ? 'bg-[#886c46] text-white shadow-lg shadow-[#886c46]/20'
-              : 'bg-black/5 text-black/60 hover:bg-black/10 hover:text-black border border-black/10'
-          }`}
-        >
-          {category}
-          {selectedCategory === category && (
-            <motion.div
-              layoutId="activeCategory"
-              className="absolute inset-0 bg-[#886c46] rounded-full -z-10"
-              transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-            />
-          )}
-        </motion.button>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
 
       {/* Products Grid */}
