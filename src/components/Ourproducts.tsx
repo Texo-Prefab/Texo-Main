@@ -204,7 +204,7 @@ const ProductCard = ({ product, index }: { product: any; index: number }) => {
       onHoverEnd={() => setIsHovered(false)}
       className="group relative perspective-1000 h-full "
     >
-      <div className="relative h-full overflow-hidden rounded-3xl bg-linear-to-br from-white via-[#faf8f5] to-white shadow-2xl shadow-white transition-all duration-700 hover:shadow-[0_20px_60px_rgba(136,108,70,0.15)]">
+      <div className="relative h-full overflow-hidden rounded-3xl bg-linear-to-br from-white via-[#faf8f5] to-white  transition-all duration-700 hover:shadow-[0_20px_60px_rgba(136,108,70,0.15)]">
         
         {/* Decorative Accent */}
         <div className="absolute right-0 top-0 h-32 w-32 bg-linear-to-br from-[#886c46]/10 to-transparent blur-2xl" />
