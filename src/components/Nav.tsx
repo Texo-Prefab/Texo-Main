@@ -115,9 +115,9 @@ const Nav = () => {
                   <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#886c46] transition-all duration-300 group-hover:w-full" />
                 </li>
                 <li className="group relative px-4 py-2">
-                  <a href="#" className="text-sm font-light tracking-wide text-white transition-colors duration-300 group-hover:text-[#886c46]">
+                  <Link href={"/career"} className="text-sm font-light tracking-wide text-white transition-colors duration-300 group-hover:text-[#886c46]">
                     CAREER
-                  </a>
+                  </Link>
                   <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#886c46] transition-all duration-300 group-hover:w-full" />
                 </li>
               </ul>

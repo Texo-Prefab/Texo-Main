@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Nav from "@/components/Nav";
-import PremiumFooter from "@/components/Footer";
 
 
 
@@ -15,12 +13,10 @@ export default function CareerLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <Nav />
-        {children}
-        <PremiumFooter />
-      </body>
-    </html>
+   
+        <div>
+          {children}
+        </div>
+        
   );
 }
