@@ -31,7 +31,7 @@ export default function History() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full lg:w-1/2 h-[50vh] overflow-hidden"
+          className="relative w-full lg:w-1/2 h-[50vh] overflow-hidden flex justify-center items-center"
         >
           <Image
             src="/products-hero.png"
