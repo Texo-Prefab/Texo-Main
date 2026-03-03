@@ -23,7 +23,7 @@ export default function History() {
       {/* Ambient glow */}
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-125 h-150 rounded-full bg-[#886c46]/6 blur-[120px] pointer-events-none" />
 
-      <div className="flex flex-col lg:flex-row items-center justify-center min-h-[85vh]">
+      <div className="flex flex-col lg:flex-row items-center justify-center min-h-[85vh] px-12">
 
         {/* ── LEFT: Image ─────────────────────────────────── */}
         <motion.div
@@ -42,7 +42,7 @@ export default function History() {
           />
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-linear-to-r from-transparent via-transparent to-white/30 lg:to-[#faf8f4]/60" />
+          <div className="absolute inset-0 bg-linear-to-r from-transparent via-transparent to-white/10 lg:to-[#faf8f4]/20" />
           <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent" />
 
           {/* Corner accents */}
