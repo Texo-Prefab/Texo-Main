@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { motion, useCycle } from "framer-motion";
 import { MapPin, Briefcase, ChevronRight, Building2 } from "lucide-react";
 import { Playfair_Display, Cormorant_Garamond } from "next/font/google";

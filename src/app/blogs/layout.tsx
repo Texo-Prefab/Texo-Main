@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "A world of Prefabs",
 };
 
-export default function AboutLayout({
+export default function BlogsLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
