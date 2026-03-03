@@ -23,7 +23,7 @@ export default function History() {
       {/* Ambient glow */}
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-125 h-150 rounded-full bg-[#886c46]/6 blur-[120px] pointer-events-none" />
 
-      <div className="flex flex-col lg:flex-row min-h-[85vh]">
+      <div className="flex flex-col lg:flex-row items-center justify-center min-h-[85vh]">
 
         {/* ── LEFT: Image ─────────────────────────────────── */}
         <motion.div
