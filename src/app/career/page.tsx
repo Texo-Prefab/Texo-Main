@@ -156,7 +156,7 @@ export default function CareerPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
                 transition={{ duration: 0.7, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative bg-[#f7e6cf] border border-[#886c46]/20 hover:border-[#886c46]/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-[#886c46]/8 transition-all duration-400"
+                className="group relative border border-[#886c46]/20 hover:border-[#886c46]/50 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-[#886c46]/8 transition-all duration-400"
               >
                 <div className="absolute inset-0 bg-linear-to-br from-[#886c46]/3 to-[#d7a661]/3 opacity-0 group-hover:opacity-100 transition duration-300 rounded-3xl" />
 
