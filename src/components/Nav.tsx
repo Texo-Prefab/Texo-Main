@@ -90,12 +90,18 @@ const Nav = () => {
                   <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#886c46] transition-all duration-300 group-hover:w-full" />
                 </li>
                 <li className="group relative px-4 py-2">
+                  <Link href={"/products"} className="text-sm font-light tracking-wide text-white transition-colors duration-300 group-hover:text-[#886c46]">
+                    PRODUCTS
+                  </Link>
+                  <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#886c46] transition-all duration-300 group-hover:w-full" />
+                </li>
+                <li className="mx-2 h-6 w-px bg-white/20" />
+                <li className="group relative px-4 py-2">
                   <Link href={"/inspiration-gallery"} className="text-sm font-light tracking-wide text-white transition-colors duration-300 group-hover:text-[#886c46]">
                     INSPIRATION GALLERY
                   </Link>
                   <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#886c46] transition-all duration-300 group-hover:w-full" />
                 </li>
-                <li className="mx-2 h-6 w-px bg-white/20" />
                 <li className="group relative px-4 py-2">
                   <a href="#" className="text-sm font-light tracking-wide text-white transition-colors duration-300 group-hover:text-[#886c46]">
                     ABOUT US
@@ -105,12 +111,6 @@ const Nav = () => {
                 <li className="group relative px-4 py-2">
                   <a href="#" className="text-sm font-light tracking-wide text-white transition-colors duration-300 group-hover:text-[#886c46]">
                     BLOGS
-                  </a>
-                  <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#886c46] transition-all duration-300 group-hover:w-full" />
-                </li>
-                <li className="group relative px-4 py-2">
-                  <a href="#" className="text-sm font-light tracking-wide text-white transition-colors duration-300 group-hover:text-[#886c46]">
-                    VLOGS
                   </a>
                   <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#886c46] transition-all duration-300 group-hover:w-full" />
                 </li>

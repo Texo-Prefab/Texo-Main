@@ -57,11 +57,10 @@ const BestSeller = () => {
   return (
     <section ref={containerRef} className="relative min-h-screen py-24 overflow-hidden">
       
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-30">
+      {/* <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 left-10 w-96 h-96 bg-[#886c46] rounded-full blur-[120px]" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#6f5838] rounded-full blur-[120px]" />
-      </div>
+      </div> */}
 
       <div className="absolute inset-0 opacity-[0.03]" 
         style={{

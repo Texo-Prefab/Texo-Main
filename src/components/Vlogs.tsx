@@ -40,9 +40,6 @@ export default function VlogsSection() {
       <div className="max-w-screen text-center md:text-left">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-8 md:mb-12 lg:mb-16">
           <div>
-            <p className="text-xs md:text-sm uppercase tracking-widest text-[#886c46] mb-2 md:mb-3">
-              Vlogs
-            </p>
             <h2 className={`${playfair.className} text-4xl md:text-6xl font-semibold bg-linear-to-r from-white via-[#886c46] to-white bg-clip-text text-transparent mb-4`}>
               Behind the scenes & walkthroughs
             </h2>

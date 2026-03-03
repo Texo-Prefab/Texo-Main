@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import { Merriweather, Inter, Playfair_Display } from 'next/font/google'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ShieldCheck, Star, Award } from 'lucide-react'
 
 const merri = Merriweather({
   subsets: ['latin'],
@@ -99,6 +99,7 @@ const Hero = () => {
   }
 
   return (
+    <>
     <section className="relative min-h-screen w-full overflow-hidden bg-gray-900 ">
     
       <div className="sr-only">
@@ -137,26 +138,13 @@ const Hero = () => {
       </motion.div>
 
       <motion.div 
-        className="relative z-10 mt-24 py-6 flex h-full flex-col justify-center px-6 md:px-12 lg:px-24"
+        className="relative z-10 mt-24 pb-3 pt-22 flex h-full flex-col justify-center px-6 md:px-12 lg:px-24"
         style={{ y, opacity }}
       >
-        <div className="grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+        <div className="grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-2 justify-center items-center">
           {/* Left Column - Main Content */}
           <div className="max-w-2xl">
-            {/* <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="mb-8"
-            >
-              <span className={`${inter.className} inline-flex items-center gap-2 rounded-full border border-[#886c46]/30 bg-linear-to-r from-[#886c46]/10 to-transparent px-5 py-2.5 text-xs font-medium tracking-wider text-[#f8f5f0] backdrop-blur-md shadow-lg`}>
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#886c46] opacity-75"></span>
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[#886c46]"></span>
-                </span>
-                REVOLUTIONIZING CONSTRUCTION SINCE 2015
-              </span>
-            </motion.div> */}
+            
             
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
@@ -177,11 +165,10 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className={`${inter.className} mb-12 max-w-xl text-base leading-relaxed text-gray-300/90 md:text-lg`}
             >
-              Experience the future of construction with our premium prefabricated solutions. 
-              Sustainable, efficient, and tailored to your vision.
+              Experience the future of construction with our premium prefabricated solutions.
             </motion.p>
 
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
@@ -213,7 +200,7 @@ const Hero = () => {
                   Satisfaction
                 </p>
               </div>
-            </motion.div>
+            </motion.div> */}
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -253,117 +240,149 @@ const Hero = () => {
           </div>
 
           {/* Right Column - Best Seller Product Card */}
+          
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="hidden lg:flex justify-end"
+  initial={{ opacity: 0, x: 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8, delay: 0.6 }}
+  className="hidden lg:flex justify-end"
+>
+  <div className="relative w-full max-w-xs">
+
+    {/* Ambient glow blobs */}
+    <div className="absolute -top-8 -left-8 h-40 w-40 rounded-full bg-[#886c46]/25 blur-3xl" />
+    <div className="absolute -bottom-8 -right-8 h-40 w-40 rounded-full bg-[#6f5838]/20 blur-3xl" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-48 w-48 rounded-full bg-[#886c46]/10 blur-3xl" />
+
+    {/* Best Seller Badge */}
+    <motion.div
+      initial={{ scale: 0, rotate: -12 }}
+      animate={{ scale: 1, rotate: 0 }}
+      transition={{ delay: 1, type: 'spring', stiffness: 200 }}
+      className="absolute -top-4 -right-4 z-10"
+    >
+      <div className="rounded-full border border-[#886c46]/60 bg-[#886c46]/80 px-4 py-2 shadow-lg shadow-[#886c46]/30 backdrop-blur-md">
+        <span className={`${inter.className} text-xs font-semibold uppercase tracking-wider text-white`}>
+          Best Seller
+        </span>
+      </div>
+    </motion.div>
+
+    {/* ── Glass Card ── */}
+    <div
+      className="relative overflow-hidden rounded-3xl border border-white/15  bg-white/22 shadow-2xl shadow-black/25 backdrop-blur-2xl"
+      style={{
+        background: 'linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%)',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.15)',
+      }}
+    >
+      {/* Inner top highlight — gives the glass "thickness" illusion */}
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />
+      {/* Inner left highlight */}
+      <div className="absolute inset-y-0 left-0 w-px bg-linear-to-b from-white/20 via-white/5 to-transparent" />
+
+      {/* Product Image */}
+      <div className="relative h-60 overflow-hidden rounded-t-3xl">
+        {/* Gradient over image */}
+        <div className="absolute inset-0 z-10 bg-linear-to-t from-black/40 via-transparent to-transparent" />
+        {/* Subtle vignette sides */}
+        <div className="absolute inset-0 z-10 bg-linear-to-r from-black/10 via-transparent to-black/10" />
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentProduct}
+            initial={{ opacity: 0, scale: 1.08 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.55, ease: [0.76, 0, 0.24, 1] }}
+            className="absolute inset-0"
           >
-            <div className="relative w-full max-w-xs">
-              {/* Decorative Elements */}
-              <div className="absolute -top-6 -left-6 h-32 w-32 rounded-full bg-[#886c46]/20 blur-3xl" />
-              <div className="absolute -bottom-6 -right-6 h-32 w-32 rounded-full bg-[#6f5838]/20 blur-3xl" />
-
-              {/* Best Seller Badge */}
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 1, type: 'spring', stiffness: 200 }}
-                className="absolute -top-4 -right-4 z-10"
-              >
-                <div className="rounded-full border-2 border-white bg-[#886c46] px-4 py-2 shadow-xl">
-                  <span className={`${inter.className} text-xs font-semibold uppercase tracking-wider text-white`}>
-                    Best Seller
-                  </span>
-                </div>
-              </motion.div>
-
-              {/* Product Card - Container stays, content changes */}
-              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#f8f5f0] shadow-2xl backdrop-blur-sm">
-                {/* Product Image - Animated */}
-                <div className="relative h-60 overflow-hidden">
-                  <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent z-10" />
-                  
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={currentProduct}
-                      initial={{ opacity: 0, scale: 1.1 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.9 }}
-                      transition={{ duration: 0.5 }}
-                      className="absolute inset-0"
-                    >
-                      <Image
-                        src={bestSellerProducts[currentProduct].image}
-                        alt={bestSellerProducts[currentProduct].name}
-                        fill
-                        className="object-cover"
-                      />
-                    </motion.div>
-                  </AnimatePresence>
-                  
-                  {/* Category Badge - Animated */}
-                  <div className="absolute top-4 left-4 z-20">
-                    <AnimatePresence mode="wait">
-                      <motion.span
-                        key={`category-${currentProduct}`}
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        transition={{ duration: 0.3 }}
-                        className={`${inter.className} block rounded-full bg-white/90 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-[#886c46] backdrop-blur-sm`}
-                      >
-                        {bestSellerProducts[currentProduct].category}
-                      </motion.span>
-                    </AnimatePresence>
-                  </div>
-                </div>
-
-                {/* Product Info - Animated */}
-                <div className="p-6">
-                  <AnimatePresence mode="wait">
-                    <motion.h3
-                      key={`title-${currentProduct}`}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.4 }}
-                      className={`${playfair.className} mb-4 text-2xl font-semibold text-[#2a2520]`}
-                    >
-                      {bestSellerProducts[currentProduct].name}
-                    </motion.h3>
-                  </AnimatePresence>
-
-                  {/* View Product Button */}
-                  <motion.a
-                    href={bestSellerProducts[currentProduct].link}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className={`${inter.className} group flex w-full items-center justify-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition-all hover:bg-[#2a2520]`}
-                  >
-                    View Product
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </motion.a>
-                </div>
-
-                {/* Product Navigation Dots */}
-                <div className="flex justify-center gap-1.5 pb-4">
-                  {bestSellerProducts.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentProduct(index)}
-                      className={`h-1.5 rounded-full transition-all duration-300 ${
-                        index === currentProduct
-                          ? 'w-8 bg-[#886c46]'
-                          : 'w-1.5 bg-[#886c46]/30 hover:bg-[#886c46]/50'
-                      }`}
-                      aria-label={`Go to product ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
+            <Image
+              src={bestSellerProducts[currentProduct].image}
+              alt={bestSellerProducts[currentProduct].name}
+              fill
+              className="object-cover"
+            />
           </motion.div>
+        </AnimatePresence>
+
+        {/* Category badge — glass pill */}
+        <div className="absolute top-4 left-4 z-20">
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={`category-${currentProduct}`}
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 8 }}
+              transition={{ duration: 0.3 }}
+              className={`${inter.className} block rounded-full border border-white/20 bg-white/15 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-white backdrop-blur-md`}
+              style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.2)' }}
+            >
+              {bestSellerProducts[currentProduct].category}
+            </motion.span>
+          </AnimatePresence>
+        </div>
+      </div>
+
+      {/* Product Info */}
+      <div className="px-3 py-2">
+        {/* Subtle divider */}
+        <div className="mb-5 h-px bg-linear-to-r from-transparent via-white/15 to-transparent" />
+
+        <AnimatePresence mode="wait">
+          <motion.h3
+            key={`title-${currentProduct}`}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.4 }}
+            className={`${playfair.className} mb-5 text-2xl font-semibold text-white`}
+            style={{ textShadow: '0 2px 12px rgba(0,0,0,0.3)' }}
+          >
+            {bestSellerProducts[currentProduct].name}
+          </motion.h3>
+        </AnimatePresence>
+
+        {/* View Product — glass button */}
+        <motion.a
+          href={bestSellerProducts[currentProduct].link}
+          whileHover={{ scale: 1.02, y: -1 }}
+          whileTap={{ scale: 0.97 }}
+          className={`${inter.className} group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-medium text-white backdrop-blur-md transition-all duration-300 hover:border-[#886c46]/60 hover:bg-[#886c46]/30`}
+          style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.15), 0 4px 12px rgba(0,0,0,0.15)' }}
+        >
+          {/* Shimmer on hover */}
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"
+            style={{ background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.12) 50%, transparent 60%)' }}
+          />
+          View Product
+          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </motion.a>
+      </div>
+
+      {/* Navigation dots */}
+      <div className="flex justify-center gap-2 mb-2">
+        {bestSellerProducts.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentProduct(index)}
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              index === currentProduct
+                ? 'w-8 bg-[#886c46]'
+                : 'w-1.5 bg-white/20 hover:bg-white/40'
+            }`}
+            aria-label={`Go to product ${index + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* Bottom inner highlight */}
+      <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
+    </div>
+  </div>
+</motion.div>
         </div>
       </motion.div>
 
@@ -427,7 +446,40 @@ const Hero = () => {
         </motion.div>
       </motion.div>
     </section>
+    {/* trust metrics marquee */}
+    <div className="overflow-hidden bg-gray-900 py-6">
+      <div className="marquee flex gap-12 px-4 items-center">
+        {[
+          { icon: ShieldCheck, label: 'ISO Certified' },
+          { icon: Star, label: '99% Client Satisfaction' },
+          { icon: Award, label: '500+ Projects Delivered' },
+          { icon: ShieldCheck, label: '24/7 Support' },
+          { icon: Star, label: 'Top Rated Provider' },
+        ].map((item, i) => (
+          <div key={i} className="flex items-center gap-3 text-white px-6 py-2 rounded-full bg-[#886c46] text-sm font-medium shrink-0">
+            <item.icon className="h-5 w-5 text-white" />
+            <span>{item.label}</span>
+          </div>
+        ))}
+        {/* repeat to create continuous scroll */}
+        {[
+          { icon: ShieldCheck, label: 'ISO Certified' },
+          { icon: Star, label: '99% Client Satisfaction' },
+          { icon: Award, label: '500+ Projects Delivered' },
+          { icon: ShieldCheck, label: '24/7 Support' },
+          { icon: Star, label: 'Top Rated Provider' },
+        ].map((item, i) => (
+          <div key={i+5} className="flex items-center gap-3 text-white px-6 py-2 rounded-full bg-[#886c46] text-sm font-medium shrink-0">
+            <item.icon className="h-5 w-5 text-white" />
+            <span>{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+    </>
   )
 }
 
 export default Hero
+
+

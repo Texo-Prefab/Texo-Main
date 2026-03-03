@@ -3,20 +3,15 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Merriweather, Playfair_Display } from 'next/font/google'
 import {
-  Zap,
-  Thermometer,
-  Layers,
-  Sliders,
-  ShieldCheck,
-  Truck,
-  Wind,
-  BadgeCheck,
-  Wrench,
-  Leaf,
   ArrowUpRight,
   Plus,
   CheckCircle2,
 } from 'lucide-react'
+import PlugnPlay from '@/components/features/PlugnPlay'
+import Image from 'next/image'
+import Vision from '@/components/features/Vision'
+import KeyFeatures from '@/components/features/KeyFeatures'
+import Advantages from '@/components/features/Advantage'
 
 const merri = Merriweather({
   subsets: ['latin'],
@@ -28,90 +23,11 @@ const playfair = Playfair_Display({
   weight: ['400', '500', '600', '700', '800', '900'],
 })
 
-// ─── Data ─────────────────────────────────────────────────────────────────────
 
-const coreFeatures = [
-  {
-    number: '01',
-    icon: Zap,
-    title: 'Rapid Deployment',
-    subtitle: 'From blueprint to built — in days, not months',
-    body: 'Our modular prefab systems arrive pre-engineered at your site, slashing construction time by up to 70%. Whether it\'s a security cabin on a remote road or a full prefab school, your structure is ready when you need it.',
-    metric: '70%',
-    metricLabel: 'Faster Than Conventional Build',
-    tags: ['Site Offices', 'Portable Cabins', 'Security Booths'],
-  },
-  {
-    number: '02',
-    icon: Thermometer,
-    title: 'Superior Thermal Performance',
-    subtitle: 'PUF insulation engineered for extremes',
-    body: 'Our PUF (Polyurethane Foam) insulated panels deliver industry-leading thermal resistance, keeping interiors 15–20°C cooler than ambient in desert heat and retaining warmth in sub-zero highlands — without heavy HVAC loads.',
-    metric: '20°C',
-    metricLabel: 'Temperature Delta Maintained',
-    tags: ['Control Rooms', 'Clean Rooms', 'Solar Cabins'],
-  },
-  {
-    number: '03',
-    icon: Layers,
-    title: 'Fully Modular Architecture',
-    subtitle: 'Scale up. Move. Reconfigure. Repeat.',
-    body: 'Every unit is designed as a module. Add sections as your project grows, relocate the entire structure to a new site, or repurpose it entirely. The same cabin that serves as a construction office today becomes a clinic cabin tomorrow.',
-    metric: '100%',
-    metricLabel: 'Relocatable & Reusable',
-    tags: ['Prefab Structures', 'Bunk Houses', 'Modular Toilets'],
-  },
-  {
-    number: '04',
-    icon: Sliders,
-    title: 'Bespoke Customisation',
-    subtitle: 'Your vision. Our engineering.',
-    body: 'No two projects are identical. We configure dimensions, interiors, electrical layouts, plumbing, fenestration, and cladding finishes to your exact specification — delivered with the precision of factory-controlled manufacturing.',
-    metric: '500+',
-    metricLabel: 'Custom Configurations Delivered',
-    tags: ['Restaurant Cabins', 'ATM Booths', 'A-Frame Cabins'],
-  },
-]
 
-const pillars = [
-  {
-    icon: ShieldCheck,
-    title: 'ISO-Grade Quality Control',
-    body: 'Every panel, weld, and joint passes multi-stage inspection before leaving our factory. Dimensional tolerances held within ±2mm.',
-  },
-  {
-    icon: Truck,
-    title: 'Nationwide Delivery Network',
-    body: 'Flat-bed fleets cover every state. Structures arrive on-site on schedule, no matter how remote the terrain.',
-  },
-  {
-    icon: Wind,
-    title: 'Wind & Seismic Rated',
-    body: 'Structures engineered to withstand Beaufort 10 winds and Zone-III seismic loads — certified for demanding infrastructure projects.',
-  },
-  {
-    icon: BadgeCheck,
-    title: '5-Year Structural Warranty',
-    body: 'Our confidence in manufacturing quality is backed by a comprehensive 5-year structural guarantee — one of the longest in the industry.',
-  },
-  {
-    icon: Wrench,
-    title: 'Turnkey Installation',
-    body: 'Our skilled site crews handle foundation prep, installation, MEP connections, and commissioning — you receive a ready-to-occupy structure.',
-  },
-  {
-    icon: Leaf,
-    title: 'Sustainable Materials',
-    body: 'Responsibly sourced timber, recyclable steel frames, and low-VOC finishes. Our wooden series carries FSC certification on all timber.',
-  },
-]
 
-const stats = [
-  { value: '5,000+', label: 'Structures Delivered' },
-  { value: '18+', label: 'Years of Expertise' },
-  { value: '32', label: 'States Served' },
-  { value: '98%', label: 'Client Satisfaction' },
-]
+
+
 
 const process = [
   {
@@ -224,241 +140,118 @@ const Features = () => {
   return (
     <div className="min-h-screen bg-white ">
 
-      {/* ── HERO ──────────────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#0d0b08] pt-32 pb-24 px-6 md:px-12 overflow-hidden">
-        
-        {/* Gold glows */}
-        <div className="absolute -top-32 -right-24 w-130 h-130 rounded-full bg-[#886c46]/10 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-24 -left-16 w-100 h-100 rounded-full bg-[#886c46]/8 blur-3xl pointer-events-none" />
+    {/* ── HERO ──────────────────────────────────────────────────────────────── */}
+<section className="relative bg-[#0d0b08] pt-22 pb-24 px-6 md:px-12 overflow-hidden h-screen">
 
-        {/* Top rule */}
-        <div className="absolute top-0  left-0 right-0 h-px bg-linear-to-r from-transparent via-[#886c46]/50 to-transparent" />
+  <Image
+    src="/products-hero.png"
+    alt="Products Hero"
+    fill
+    priority
+    className="object-cover object-center z-0"
+  />
 
-        <div className="max-w-7xl mx-auto relative mt-32 z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-end">
+  <div className="absolute inset-0 z-1 bg-black/30" />
 
-            {/* Left — copy */}
-            <div>
-              {/* Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="mb-8"
-              >
-                <span className={`${merri.className} inline-flex items-center gap-2.5 rounded-full border border-[#886c46]/35 bg-[#886c46]/10 px-6 py-2.5 text-[0.65rem] font-light tracking-[0.28em] text-[#a8926d] uppercase`}>
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#886c46] opacity-60" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[#886c46]" />
-                  </span>
-                  Why Choose Us
-                </span>
-              </motion.div>
+  
 
-              <motion.h1
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.15 }}
-                className={`${playfair.className} text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95] text-white mb-7`}
-              >
-                Built Different.
-                <br />
-                <span className="bg-linear-to-r from-white via-[#a8926d] to-[#886c46] bg-clip-text text-transparent">
-                  Engineered to Last.
-                </span>
-              </motion.h1>
+  
+  {/* Top rule */}
+  <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#886c46]/50 to-transparent z-3" />
 
-              <motion.p
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.28 }}
-                className={`${merri.className} text-base font-light leading-[1.9] text-white/55 max-w-md`}
-              >
-                For over 18 years, we have delivered modular structures that site managers,
-                contractors, and enterprise clients trust for their most demanding projects
-                across India.
-              </motion.p>
-            </div>
+  {/* Vertical side accents */}
+  <div className="absolute top-0 left-12 bottom-0 w-px bg-linear-to-b from-transparent via-[#886c46]/15 to-transparent pointer-events-none hidden md:block z-3" />
+  <div className="absolute top-0 right-12 bottom-0 w-px bg-linear-to-b from-transparent via-[#886c46]/15 to-transparent pointer-events-none hidden md:block z-3" />
 
-            {/* Right — stats grid */}
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.35 }}
-              className="grid grid-cols-2 border border-[#886c46]/20 rounded-2xl overflow-hidden"
-            >
-              {stats.map((s, i) => (
-                <div
-                  key={i}
-                  className={`p-8 md:p-10 ${i % 2 === 0 ? 'bg-white/4' : 'bg-white/2'} ${i < 2 ? 'border-b border-[#886c46]/15' : ''} ${i % 2 === 0 ? 'border-r border-[#886c46]/15' : ''}`}
-                >
-                  <div className={`${playfair.className} text-4xl font-bold text-[#a8926d] leading-none mb-2`}>
-                    {s.value}
-                  </div>
-                  <div className={`${merri.className} text-[0.65rem] font-light text-white/40 uppercase tracking-widest leading-relaxed`}>
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </motion.div>
+  <div className="max-w-7xl mx-auto relative mt-32 z-10">
+    <div className="flex justify-center items-center text-center w-full">
 
-          </div>
-        </div>
+      <div className="max-w-4xl">
 
-        {/* Bottom rule */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#886c46]/40 to-transparent" />
-      </section>
+        {/* Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-10"
+        >
+          <span className={`${merri.className} inline-flex items-center gap-2.5 rounded-full border border-[#886c46] bg-black/40 px-6 py-2.5 text-[0.65rem] font-light tracking-[0.28em] text-white uppercase backdrop-blur-sm shadow-[0_0_24px_rgba(136,108,70,0.12)]`}>
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#886c46] opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#886c46]" />
+            </span>
+            Features
+          </span>
+        </motion.div>
 
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+          className={`${playfair.className} text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-[0.92] text-white mb-8 tracking-tight`}
+        >
+          <motion.span
+            initial={{ opacity: 0, x: -16 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.2 }}
+            className="block"
+          >
+            Built Different.
+          </motion.span>
+          <motion.span
+            initial={{ opacity: 0, x: 16 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.35 }}
+            className="block bg-linear-to-r from-white via-[#886c46] to-white bg-clip-text text-transparent drop-shadow-[0_0_48px_rgba(136,108,70,0.2)]"
+          >
+            Engineered to Last.
+          </motion.span>
+        </motion.h1>
 
-      {/* ── CORE FEATURES ─────────────────────────────────────────────────────── */}
-      <section className="relative py-24 px-6 md:px-12 bg-white">
-        <div className="max-w-7xl mx-auto">
+        {/* Decorative divider */}
+        <motion.div
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={{ scaleX: 1, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="flex items-center justify-center gap-4 mb-8"
+        >
+          <div className="h-px w-16 bg-linear-to-r from-transparent to-[#886c46]/50" />
+          <div className="w-1.5 h-1.5 rounded-full bg-[#886c46]/70 shadow-[0_0_8px_rgba(136,108,70,0.6)]" />
+          <div className="h-px w-16 bg-linear-to-l from-transparent to-[#886c46]/50" />
+        </motion.div>
 
-          {/* Section header */}
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-            <div>
-              <p className={`${merri.className} text-[0.65rem] font-light tracking-[0.28em] uppercase text-[#886c46] mb-4`}>
-                Core Capabilities
-              </p>
-              <h2 className={`${playfair.className} text-4xl md:text-5xl font-bold text-black leading-tight`}>
-                What Sets Us Apart
-              </h2>
-            </div>
-            <p className={`${merri.className} text-sm font-light leading-[1.9] text-black/50 max-w-xs md:text-right`}>
-              Every feature below is the result of real-world problem-solving across thousands of project sites.
-            </p>
-          </div>
+        {/* Body copy */}
+        <motion.p
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.28 }}
+          className={`${merri.className} text-base md:text-lg font-light leading-[1.9] text-white max-w-2xl mx-auto`}
+        >
+          For over 18 years, we have delivered modular structures that site managers,
+          contractors, and enterprise clients trust for their most demanding projects
+          across India.
+        </motion.p>
 
-          {/* Feature rows */}
-          <div className="border border-black/8 rounded-2xl overflow-hidden divide-y divide-black/8">
-            {coreFeatures.map((f, i) => {
-              const Icon = f.icon
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
-                  className="group grid grid-cols-[60px_1fr] lg:grid-cols-[60px_1fr_260px] gap-0 hover:bg-[#faf8f5] transition-colors duration-300"
-                >
-                  {/* Number + icon col */}
-                  <div className="flex flex-col items-center pt-10 pb-10 pl-8 pr-0 border-r border-black/6 gap-4">
-                    <span className={`${playfair.className} text-xs font-bold text-[#886c46]/50 tracking-wider`}>
-                      {f.number}
-                    </span>
-                    <div className="w-10 h-10 rounded-xl bg-linear-to-br from-[#886c46] to-[#6f5838] flex items-center justify-center shadow-lg shadow-[#886c46]/20">
-                      <Icon className="w-5 h-5 text-white" />
-                    </div>
-                  </div>
+      </div>
+    </div>
+  </div>
 
-                  {/* Main content */}
-                  <div className="p-8 lg:p-10 lg:pr-16">
-                    <h3 className={`${playfair.className} text-2xl md:text-3xl font-bold text-black mb-1.5 group-hover:text-[#886c46] transition-colors duration-300`}>
-                      {f.title}
-                    </h3>
-                    <p className={`${merri.className} text-[0.72rem] font-light uppercase tracking-[0.12em] text-[#886c46] mb-5`}>
-                      {f.subtitle}
-                    </p>
-                    <p className={`${merri.className} text-sm font-light leading-[1.9] text-black/60 mb-7`}>
-                      {f.body}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {f.tags.map(tag => (
-                        <span
-                          key={tag}
-                          className={`${merri.className} text-[0.62rem] font-light uppercase tracking-widest px-4 py-1.5 rounded-full border border-[#886c46]/30 text-[#886c46]`}
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+  {/* Corner accents */}
+  <div className="absolute top-16 left-6 md:left-12 w-8 h-8 border-t border-l border-[#886c46]/40 pointer-events-none z-3" />
+  <div className="absolute top-16 right-6 md:right-12 w-8 h-8 border-t border-r border-[#886c46]/40 pointer-events-none z-3" />
+  <div className="absolute bottom-4 left-6 md:left-12 w-8 h-8 border-b border-l border-[#886c46]/40 pointer-events-none z-3" />
+  <div className="absolute bottom-4 right-6 md:right-12 w-8 h-8 border-b border-r border-[#886c46]/40 pointer-events-none z-3" />
 
-                  {/* Metric col — hidden on small */}
-                  <div className="hidden lg:flex flex-col justify-center border-l border-black/6 px-10 py-10">
-                    <div className={`${playfair.className} text-5xl font-extrabold text-[#886c46] leading-none mb-2.5`}>
-                      {f.metric}
-                    </div>
-                    <div className={`${merri.className} text-[0.65rem] font-light uppercase tracking-[0.08em] text-black/40 leading-relaxed`}>
-                      {f.metricLabel}
-                    </div>
-                  </div>
-
-                </motion.div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-
-      {/* ── BRAND PROMISE BAND ────────────────────────────────────────────────── */}
-      <section className="relative py-20 px-6 md:px-12 bg-linear-to-r from-[#6f5838] via-[#886c46] to-[#6f5838] overflow-hidden">
-        {/* Hatch pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.06] pointer-events-none"
-          style={{
-            backgroundImage: 'repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%)',
-            backgroundSize: '22px 22px',
-          }}
-        />
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <p className={`${merri.className} text-[0.65rem] font-light tracking-[0.28em] uppercase text-white/50 mb-5`}>
-            Our Promise
-          </p>
-          <blockquote className={`${playfair.className} text-2xl md:text-3xl lg:text-4xl font-semibold text-white leading-snug mb-6`}>
-            {`"You receive a structure ready to work in —<br className="hidden md:block" /> not a site to manage."`}
-          </blockquote>
-          <p className={`${merri.className} text-sm font-light leading-[1.9] text-white/65 max-w-xl mx-auto`}>
-            From the first site survey to the handover walkthrough, our team handles every step.
-            Your time is better spent on your project — not ours.
-          </p>
-        </div>
-      </section>
-
+  {/* Bottom rule */}
+  <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#886c46]/40 to-transparent z-3" />
+</section>
 
       {/* ── BRAND PILLARS ─────────────────────────────────────────────────────── */}
-      <section className="relative py-24 px-6 md:px-12 bg-[#faf8f5]">
-        <div className="max-w-7xl mx-auto">
-
-          <div className="mb-16">
-            <p className={`${merri.className} text-[0.65rem] font-light tracking-[0.28em] uppercase text-[#886c46] mb-4`}>
-              Built Into Every Unit
-            </p>
-            <h2 className={`${playfair.className} text-4xl md:text-5xl font-bold text-black leading-tight`}>
-              Standards You Can Count On
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-black/8 rounded-2xl overflow-hidden">
-            {pillars.map((p, i) => {
-              const Icon = p.icon
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: i * 0.07 }}
-                  className="group bg-white hover:bg-[#fdf9f5] transition-colors duration-300 p-10"
-                  style={{ borderTop: i < 3 ? '3px solid #886c46' : '3px solid transparent' }}
-                >
-                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#886c46]/15 to-[#886c46]/5 flex items-center justify-center mb-6 group-hover:bg-linear-to-br group-hover:from-[#886c46] group-hover:to-[#6f5838] transition-all duration-300">
-                    <Icon className="w-5 h-5 text-[#886c46] group-hover:text-white transition-colors duration-300" />
-                  </div>
-                  <h3 className={`${playfair.className} text-lg font-semibold text-black mb-3 leading-snug`}>
-                    {p.title}
-                  </h3>
-                  <p className={`${merri.className} text-sm font-light leading-[1.85] text-black/55`}>
-                    {p.body}
-                  </p>
-                </motion.div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
+      <Vision />
+      <KeyFeatures />
+      <PlugnPlay />
+      <Advantages />
 
 
       {/* ── TRUST STRIP ───────────────────────────────────────────────────────── */}

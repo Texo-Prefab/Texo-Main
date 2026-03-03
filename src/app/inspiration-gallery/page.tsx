@@ -407,120 +407,121 @@ const InspirationGallery = () => {
     <div className="min-h-screen bg-white">
 
       {/* ── HERO ──────────────────────────────────────────────────────────────── */}
-      <section ref={heroRef} className="relative pt-32 pb-28 px-6 md:px-12 overflow-hidden bg-[#0d0b08]">
-        
-        <div className="absolute -top-40 -right-24 w-140 h-140 rounded-full bg-[#886c46]/10 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-20 -left-16 w-95 h-95 rounded-full bg-[#886c46]/8 blur-3xl pointer-events-none" />
+<section ref={heroRef} className="relative pt-32 pb-28 px-6 md:px-12 overflow-hidden bg-[#0d0b08]">
 
-        {/* Top rule */}
+  {/* Full background image */}
+  <Image
+    src="/products-hero.png"
+    alt="Gallery Hero"
+    fill
+    priority
+    className="object-cover object-center z-0"
+  />
+
+  {/* Dark overlay */}
+  <div className="absolute inset-0 z-1 bg-black/50" />
+
+  {/* Gold glows */}
+  <div className="absolute -top-40 -right-24 w-140 h-140 rounded-full bg-[#886c46]/10 blur-3xl pointer-events-none z-2" />
+  <div className="absolute -bottom-20 -left-16 w-95 h-95 rounded-full bg-[#886c46]/8 blur-3xl pointer-events-none z-2" />
+
+  {/* Top rule */}
+  <motion.div
+    initial={{ scaleX: 0 }}
+    animate={isHeroInView ? { scaleX: 1 } : { scaleX: 0 }}
+    transition={{ duration: 1.2, ease: 'easeInOut' }}
+    className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#886c46]/50 to-transparent z-3"
+  />
+
+  {/* Vertical side accents */}
+  <div className="absolute top-0 left-12 bottom-0 w-px bg-linear-to-b from-transparent via-[#886c46]/15 to-transparent pointer-events-none hidden md:block z-3" />
+  <div className="absolute top-0 right-12 bottom-0 w-px bg-linear-to-b from-transparent via-[#886c46]/15 to-transparent pointer-events-none hidden md:block z-3" />
+
+  {/* Corner accents */}
+  <div className="absolute top-16 left-6 md:left-12 w-8 h-8 border-t border-l border-[#886c46]/40 pointer-events-none z-3" />
+  <div className="absolute top-16 right-6 md:right-12 w-8 h-8 border-t border-r border-[#886c46]/40 pointer-events-none z-3" />
+  <div className="absolute bottom-4 left-6 md:left-12 w-8 h-8 border-b border-l border-[#886c46]/40 pointer-events-none z-3" />
+  <div className="absolute bottom-4 right-6 md:right-12 w-8 h-8 border-b border-r border-[#886c46]/40 pointer-events-none z-3" />
+
+  <div className="max-w-7xl mx-auto relative z-10 mt-16">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      {/* Left */}
+      <div>
+        {/* Badge */}
         <motion.div
-          initial={{ scaleX: 0 }}
-          animate={isHeroInView ? { scaleX: 1 } : { scaleX: 0 }}
-          transition={{ duration: 1.2, ease: 'easeInOut' }}
-          className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#886c46]/50 to-transparent"
-        />
+          initial={{ opacity: 0, y: 14 }}
+          animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="mb-8"
+        >
+          <span className={`${merri.className} inline-flex items-center gap-2.5 rounded-full border border-[#886c46] bg-[#886c46]/80 px-6 py-2.5 text-xs font-light tracking-[0.3em] text-white uppercase backdrop-blur-sm shadow-[0_0_24px_rgba(136,108,70,0.12)]`}>
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#886c46] opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#886c46]" />
+            </span>
+            Real Projects · Real Sites
+          </span>
+        </motion.div>
 
-        <div className="max-w-7xl mx-auto relative z-10 mt-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <motion.h1
+          initial={{ opacity: 0, y: 28 }}
+          animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.15 }}
+          className={`${playfair.className} text-6xl md:text-7xl lg:text-8xl font-light leading-[0.95] text-white mb-7`}
+        >
+          Inspiration
+          <br />
+          <span className="bg-linear-to-r from-white via-[#a8926d] to-[#886c46] bg-clip-text text-transparent">
+            Gallery
+          </span>
+        </motion.h1>
 
-            {/* Left */}
-            <div>
-              {/* Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6 }}
-                className="mb-8"
-              >
-                <span className={`${merri.className} inline-flex items-center gap-2.5 rounded-full border border-[#886c46]/35 bg-[#886c46]/10 px-6 py-2.5 text-[0.65rem] font-light tracking-[0.28em] text-[#a8926d] uppercase`}>
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#886c46] opacity-60" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[#886c46]" />
-                  </span>
-                  Real Projects · Real Sites
-                </span>
-              </motion.div>
+        <motion.p
+          initial={{ opacity: 0, y: 28 }}
+          animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.28 }}
+          className={`${merri.className} text-lg font-light leading-[1.9] text-white/70 max-w-md mb-10`}
+        >
+          Browse completed installations across India. Filter by structure type and size to find the exact match for your project vision.
+        </motion.p>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 28 }}
-                animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.15 }}
-                className={`${playfair.className} text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95] text-white mb-7`}
-              >
-                Inspiration
-                <br />
-                <span className="bg-linear-to-r from-white via-[#a8926d] to-[#886c46] bg-clip-text text-transparent">
-                  Gallery
-                </span>
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 28 }}
-                animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.28 }}
-                className={`${merri.className} text-base font-light leading-[1.9] text-white/55 max-w-md mb-10`}
-              >
-                Browse completed installations across India. Filter by structure type and size to find the exact match for your project vision.
-              </motion.p>
-
-              {/* Search bar */}
-              <motion.div
-                initial={{ opacity: 0, y: 28 }}
-                animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="relative max-w-sm"
-              >
-                <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40 z-10" />
-                <input
-                  type="text"
-                  placeholder="Search by name, use case, location..."
-                  value={search}
-                  onChange={e => setSearch(e.target.value)}
-                  className={`${merri.className} w-full pl-14 pr-5 py-4 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl text-white placeholder-white/30 focus:outline-none focus:border-[#886c46]/60 focus:bg-white/8 transition-all duration-300 font-light text-sm`}
-                />
-                {search && (
-                  <button onClick={() => setSearch('')} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 transition-colors">
-                    <X className="w-4 h-4" />
-                  </button>
-                )}
-              </motion.div>
-            </div>
-
-            {/* Right — count card */}
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              animate={isHeroInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.35 }}
-              className="hidden lg:block"
-            >
-              <div className="border border-[#886c46]/20 rounded-2xl overflow-hidden">
-                <div className="grid grid-cols-2 divide-x divide-y divide-[#886c46]/10">
-                  {[
-                    { v: '24+', l: 'Showcase Projects' },
-                    { v: '6', l: 'Structure Categories' },
-                    { v: '4', l: 'Size Classes' },
-                    { v: '14', l: 'States Featured' },
-                  ].map((s, i) => (
-                    <div key={i} className={`p-8 ${i % 2 === 0 ? 'bg-white/3' : 'bg-white/1.5'}`}>
-                      <div className={`${playfair.className} text-3xl font-bold text-[#a8926d] leading-none mb-2`}>{s.v}</div>
-                      <div className={`${merri.className} text-[0.62rem] font-light uppercase tracking-widest text-white/35 leading-relaxed`}>{s.l}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-
-          </div>
-        </div>
-
-        {/* Bottom rule */}
+        {/* Search bar — unchanged */}
         <motion.div
-          initial={{ scaleX: 0 }}
-          animate={isHeroInView ? { scaleX: 1 } : { scaleX: 0 }}
-          transition={{ duration: 1.2, delay: 0.6, ease: 'easeInOut' }}
-          className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#886c46]/40 to-transparent"
-        />
-      </section>
+          initial={{ opacity: 0, y: 28 }}
+          animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="relative max-w-sm"
+        >
+          <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-white/60 z-10" />
+          <input
+            type="text"
+            placeholder="Search by name, use case, location..."
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            className={`${merri.className} w-full pl-16 pr-6 py-5 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl text-white placeholder-white/40 focus:outline-none focus:border-[#886c46] focus:bg-white/10 transition-all duration-300 font-light text-sm`}
+          />
+          {search && (
+            <button onClick={() => setSearch('')} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 transition-colors">
+              <X className="w-4 h-4" />
+            </button>
+          )}
+        </motion.div>
+      </div>
+
+      
+
+    </div>
+  </div>
+
+  {/* Bottom rule */}
+  <motion.div
+    initial={{ scaleX: 0 }}
+    animate={isHeroInView ? { scaleX: 1 } : { scaleX: 0 }}
+    transition={{ duration: 1.2, delay: 0.6, ease: 'easeInOut' }}
+    className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#886c46]/40 to-transparent z-3"
+  />
+</section>
 
 
       {/* ── FILTER BAR ────────────────────────────────────────────────────────── */}

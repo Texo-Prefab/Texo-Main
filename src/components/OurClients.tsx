@@ -10,13 +10,13 @@ const OurClients = () => {
   return (
     <div className=' flex justify-center'>
 
-        <section className="py-24 overflow-hidden bg-white max-w-3xl space-y-16">
+        <section className="py-24 overflow-hidden bg-white  space-y-16">
                 <div className=" h-fit">
                 <h2 className={`${playfair.className} text-3xl md:text-6xl font-semibold text-center bg-linear-to-r from-black via-[#886c46] to-black bg-clip-text text-transparent`}>
                     Our Happy Clientele
                 </h2>
                 </div>
-        <div className="marquee flex gap-16 px-6 ">
+        <div className="marquee flex gap-16 px-4">
             {[
             "/clients/int-1.webp",
             "/clients/int-5.jpg",
