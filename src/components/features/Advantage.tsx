@@ -1,16 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Clock,
-  BadgeCheck,
-  Wrench,
-  Leaf,
-  ShieldCheck,
-  Truck,
-  IndianRupee,
-  LayoutGrid,
-} from "lucide-react";
 import { Playfair_Display, Cormorant_Garamond } from "next/font/google";
 
 const playfair = Playfair_Display({
@@ -23,49 +13,59 @@ const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "500"],
 });
 
+import {
+  Plug,
+  ClipboardCheck,
+  Factory,
+  Timer,
+  Move,
+  Handshake,
+  Hammer,
+  Recycle,
+} from "lucide-react";
+
 const advantages = [
   {
-    icon: Clock,
+    icon: Plug,
     title: "Plug & Play Construction",
     body: "Modular units arrive fully finished, just connect and start living.",
   },
   {
-    icon: BadgeCheck,
+    icon: ClipboardCheck,
     title: "Complete Turnkey Experience",
     body: "From design to delivery to handover, it’s all handled by Texo.",
   },
   {
-    icon: Wrench,
+    icon: Factory,
     title: "Precision-Crafted in Smart Factories",
     body: "Engineered off-site under controlled conditions for consistent quality.",
   },
   {
-    icon: Leaf,
-    title: "Speed Meets your Style",
+    icon: Timer,
+    title: "Speed Meets Your Style",
     body: "Delivered 50% faster than conventional builds with aesthetics intact.",
   },
   {
-    icon: ShieldCheck,
+    icon: Move,
     title: "Scalable. Flexible. Mobile.",
     body: "Easily relocate, expand, or reconfigure as life evolves.",
   },
   {
-    icon: Truck,
+    icon: Handshake,
     title: "Global-Grade Partners, Local Execution",
-    body: "We build with Kohler, VEKA, Kajaria, and more quality that’s always standard.",
+    body: "We build with Kohler, VEKA, Kajaria, and more — quality that’s always standard.",
   },
   {
-    icon: IndianRupee,
+    icon: Hammer,
     title: "Built to Last. Designed to Impress.",
     body: "Robust structural integrity paired with refined architectural finishes.",
   },
   {
-    icon: LayoutGrid,
+    icon: Recycle,
     title: "Sustainable & Reusable",
     body: "Made from recyclable materials with long-term reuse in mind.",
   },
 ];
-
 export default function Advantages() {
   return (
     <section className="relative py-32 bg-linear-to-b from-white via-[#faf8f4] to-white overflow-hidden">
@@ -138,40 +138,13 @@ export default function Advantages() {
                 <div className="h-px w-8 bg-[#886c46]/30 mb-4 group-hover:w-14 transition-all duration-500" />
 
                 {/* Body */}
-                <p className={`${cormorant.className} text-zinc-500 text-[0.97rem] font-light leading-relaxed`}>
+                <p className={` text-black text-md  leading-relaxed`}>
                   {adv.body}
                 </p>
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* ── Bottom stat strip ───────────────────────────────────── */}
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-16 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-14"
-        >
-          {[
-            { stat: "18+", label: "Years of Excellence" },
-            { stat: "500+", label: "Projects Delivered" },
-            { stat: "150+", label: "Enterprise Clients" },
-          ].map((item, i) => (
-            <div key={i} className="flex items-center gap-5">
-              {i > 0 && <div className="hidden md:block h-8 w-px bg-[#886c46]/20" />}
-              <div className="text-center">
-                <span className={`${playfair.className} block text-3xl font-bold text-[#886c46]`}>
-                  {item.stat}
-                </span>
-                <span className={`${cormorant.className} text-[0.65rem] tracking-[0.22em] uppercase text-zinc-400 font-medium`}>
-                  {item.label}
-                </span>
-              </div>
-            </div>
-          ))}
-        </motion.div>
 
       </div>
     </section>

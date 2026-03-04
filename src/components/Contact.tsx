@@ -2,14 +2,8 @@
 
 import { useRef, useState, ChangeEvent, FormEvent } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, ArrowRight, CheckCircle2, LucideIcon } from 'lucide-react';
+import { Mail, Phone, Send, ArrowRight, CheckCircle2, LucideIcon } from 'lucide-react';
 import Image from "next/image";
-// Replace with your actual font imports / next/font setup
-import { Playfair_Display, Merriweather } from 'next/font/google';
-const playfair = Playfair_Display({ subsets: ['latin'] });
-const merri = Merriweather({ subsets: ['latin'], weight: ['300', '400'] });
-
-// For standalone use, swap className={playfair.className} → className="font-playfair" etc.
 
 interface ContactDetail {
   icon: LucideIcon;
@@ -33,16 +27,22 @@ const contactDetails: ContactDetail[] = [
     href: 'mailto:hello@yourcompany.com',
   },
   {
+    icon: Mail,
+    label: 'Email Us',
+    value: 'hello@yourcompany.com',
+    href: 'mailto:hello@yourcompany.com',
+  },
+  {
     icon: Phone,
     label: 'Call Us',
     value: '+91 98765 43210',
     href: 'tel:+919876543210',
   },
   {
-    icon: MapPin,
-    label: 'Visit Us',
-    value: 'Mumbai, Maharashtra, India',
-    href: '#',
+    icon: Phone,
+    label: 'Call Us',
+    value: '+91 98765 43210',
+    href: 'tel:+919876543210',
   },
 ];
 
@@ -60,7 +60,7 @@ export default function Contact() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1400)); // simulate request
+    await new Promise((r) => setTimeout(r, 1400));
     setLoading(false);
     setSubmitted(true);
   };
@@ -71,21 +71,17 @@ export default function Contact() {
       className="relative min-h-screen flex items-center overflow-hidden bg-[#0d0b08] px-6 md:px-12 py-28"
     >
       {/* ── Background image with overlay ── */}
-      
-
-        <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0">
         <Image
-            src="/siteoffice-2.webp"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover opacity-10"
+          src="/products-hero.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
-
-        {/* Vignette */}
-        <div className="absolute inset-0 bg-black" />
-        </div>
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
 
       {/* ── Ambient blobs ── */}
       <div className="absolute -top-40 -right-24 w-140 h-140 rounded-full bg-[#886c46]/10 blur-3xl pointer-events-none z-0" />
@@ -104,14 +100,13 @@ export default function Contact() {
 
           {/* ── LEFT — Supporting text ── */}
           <div>
-            {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
               className="mb-8"
             >
-              <span className="inline-flex items-center gap-2.5 rounded-full border bg-[#000000] px-6 py-2.5 text-[0.65rem] font-light tracking-[0.28em] text-[#886c46] uppercase">
+              <span className="inline-flex items-center gap-2.5 rounded-full border bg-[#000000] px-6 py-2.5 text-[0.65rem] font-light tracking-[0.28em] text-white uppercase">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#886c46] opacity-60" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-[#886c46]" />
@@ -120,7 +115,6 @@ export default function Contact() {
               </span>
             </motion.div>
 
-            {/* Heading */}
             <motion.h2
               initial={{ opacity: 0, y: 28 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -130,12 +124,9 @@ export default function Contact() {
             >
               Let{`'`}s Build
               <br />
-              <span className="">
-                Together
-              </span>
+              <span className="">Together</span>
             </motion.h2>
 
-            {/* Body */}
             <motion.p
               initial={{ opacity: 0, y: 28 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -146,7 +137,6 @@ export default function Contact() {
               Whether you{`'`}re planning a new installation or looking for inspiration, our team is ready to guide you from concept to completion. Share your vision and we{`'`}ll take it from there.
             </motion.p>
 
-            {/* Contact details */}
             <div className="space-y-6">
               {contactDetails.map((item, i) => {
                 const Icon = item.icon;
@@ -182,7 +172,6 @@ export default function Contact() {
               })}
             </div>
 
-            {/* Divider */}
             <motion.div
               initial={{ scaleX: 0, originX: 0 }}
               animate={isInView ? { scaleX: 1 } : {}}
@@ -197,9 +186,8 @@ export default function Contact() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.35 }}
           >
-            <div className="border border-[#886c46]/20 rounded-2xl bg-white/3 backdrop-blur-xl overflow-hidden">
-              {/* Form header */}
-              <div className="px-8 pt-8 pb-6 border-b border-[#886c46]/15">
+            <div className="border border-[#886c46] rounded-2xl bg-white/13 backdrop-blur-xl overflow-hidden mt-4">
+              <div className="px-8 pt-8 pb-6 border-b border-[#886c46]/15 ">
                 <p
                   className="text-[0.62rem] uppercase tracking-[0.28em] text-[#a8926d] font-light mb-1"
                   style={{ fontFamily: "'Merriweather', serif" }}
@@ -207,7 +195,7 @@ export default function Contact() {
                   Send a Message
                 </p>
                 <p
-                  className="text-xs text-white/30 font-light"
+                  className="text-xs text-white font-light"
                   style={{ fontFamily: "'Merriweather', serif" }}
                 >
                   We typically respond within 24 hours.
@@ -215,7 +203,6 @@ export default function Contact() {
               </div>
 
               {submitted ? (
-                /* ── Success state ── */
                 <div className="px-8 py-16 flex flex-col items-center text-center gap-5">
                   <div className="w-14 h-14 rounded-full bg-[#886c46]/15 border border-[#886c46]/30 flex items-center justify-center">
                     <CheckCircle2 className="w-6 h-6 text-[#a8926d]" />
@@ -236,9 +223,7 @@ export default function Contact() {
                   </div>
                 </div>
               ) : (
-                /* ── Form ── */
                 <form onSubmit={handleSubmit} className="px-8 py-8 space-y-5">
-                  {/* Name + Phone row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <Field
                       label="Full Name"
@@ -259,7 +244,6 @@ export default function Contact() {
                     />
                   </div>
 
-                  {/* Email */}
                   <Field
                     label="Email Address"
                     name="email"
@@ -270,10 +254,9 @@ export default function Contact() {
                     required
                   />
 
-                  {/* Message */}
                   <div>
                     <label
-                      className="block text-[0.6rem] uppercase tracking-[0.22em] text-white/35 font-light mb-2"
+                      className="block text-[0.6rem] uppercase tracking-[0.22em] text-white font-light mb-2"
                       style={{ fontFamily: "'Merriweather', serif" }}
                     >
                       Your Message
@@ -290,7 +273,6 @@ export default function Contact() {
                     />
                   </div>
 
-                  {/* Submit */}
                   <button
                     type="submit"
                     disabled={loading}
@@ -311,7 +293,7 @@ export default function Contact() {
                   </button>
 
                   <p
-                    className="text-center text-[0.58rem] text-white/20 font-light tracking-wider"
+                    className="text-center text-[0.58rem] text-white/90 font-light tracking-wider"
                     style={{ fontFamily: "'Merriweather', serif" }}
                   >
                     Your information is kept strictly confidential.
@@ -335,7 +317,6 @@ export default function Contact() {
   );
 }
 
-/* ── Reusable field ── */
 interface FieldProps {
   label: string;
   name: string;
@@ -351,7 +332,7 @@ function Field({ label, name, type, placeholder, value, onChange, required }: Fi
     <div>
       <label
         htmlFor={name}
-        className="block text-[0.6rem] uppercase tracking-[0.22em] text-white/35 font-light mb-2"
+        className="block text-[0.6rem] uppercase tracking-[0.22em] text-white font-light mb-2"
         style={{ fontFamily: "'Merriweather', serif" }}
       >
         {label}
@@ -364,7 +345,7 @@ function Field({ label, name, type, placeholder, value, onChange, required }: Fi
         value={value}
         onChange={onChange}
         required={required}
-        className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/25 focus:outline-none focus:border-[#886c46]/60 focus:bg-white/8 transition-all duration-300 text-sm font-light"
+        className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white focus:outline-none focus:border-[#886c46]/60 focus:bg-white/8 transition-all duration-300 text-sm font-light"
         style={{ fontFamily: "'Merriweather', serif" }}
       />
     </div>

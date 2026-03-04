@@ -121,7 +121,7 @@ export default function Founders() {
                 <div className="h-px w-12 bg-[#886c46]/20 mb-6 mx-auto" />
 
                 {/* Message — Primary Focus */}
-                <blockquote className={`${cormorant.className} text-zinc-600 text-base font-light leading-relaxed mb-8 text-center`}>
+                <blockquote className={` text-black leading-relaxed mb-8 text-center`}>
                   {founder.message}
                 </blockquote>
 

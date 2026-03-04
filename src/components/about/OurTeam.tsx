@@ -62,10 +62,10 @@ export default function OurTeam() {
             className="lg:pb-2"
           >
             <div className="h-px w-10 bg-[#886c46]/30 mb-5 hidden lg:block" />
-            <p className={`${cormorant.className} text-zinc-500 text-lg font-light leading-[1.9] mb-4`}>
+            <p className={` text-black text-lg leading-[1.9] mb-4`}>
               Behind every precision-cut panel, every on-time delivery, and every client who moves in ahead of schedule — there is a team that refuses to cut corners. At Texo, our people are our product.
             </p>
-            <p className={`${cormorant.className} text-zinc-400 text-base font-light leading-[1.85]`}>
+            <p className={` text-black text-lg leading-[1.85]`}>
               Engineers, fabricators, logistics specialists, and client partners — united by a single obsession: building things that last. We hire for character, train for craft, and measure ourselves by the structures we leave behind.
             </p>
           </motion.div>

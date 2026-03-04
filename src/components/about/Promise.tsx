@@ -104,29 +104,6 @@ export default function Promise() {
       is not just a structure, but a space you can truly rely on for years to come.
     </motion.p>
 
-    {/* Stat row */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false }}
-      transition={{ duration: 0.8, delay: 0.4 }}
-      className="flex flex-wrap items-center justify-center gap-8 md:gap-14 mt-2"
-    >
-      {[
-        { v: "18+", l: "Years Building" },
-        { v: "500+", l: "Projects Done" },
-        { v: "150+", l: "Happy Clients" },
-      ].map((s, i) => (
-        <div key={i} className="flex items-center gap-8 md:gap-14">
-          {i > 0 && <div className="hidden md:block h-6 w-px bg-white/15" />}
-          <div className="text-center">
-            <p className={`${playfair.className} text-2xl font-bold text-[#a8926d] leading-none mb-1`}>{s.v}</p>
-            <p className="text-[0.55rem] tracking-[0.22em] uppercase text-white/35 font-medium">{s.l}</p>
-          </div>
-        </div>
-      ))}
-    </motion.div>
-
   </div>
 </div>
  )   
