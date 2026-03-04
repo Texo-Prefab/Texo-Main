@@ -137,9 +137,9 @@ const OurProducts = () => {
                     >
                       Prefabricated Solutions
                       <br />
-                      <span className="font-bold bg-linear-to-r from-white via-[#886c46] to-white bg-clip-text text-transparent">
+                      
                         For Every Need
-                      </span>
+                      
             </motion.h2>
 
           <motion.p

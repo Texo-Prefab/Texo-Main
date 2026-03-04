@@ -1,3 +1,219 @@
+// "use client";
+
+// import Image from "next/image";
+// import { Star } from "lucide-react";
+// import {
+//   motion,
+//   useScroll,
+//   useTransform,
+// } from "framer-motion";
+// import { useRef } from "react";
+// import { Playfair_Display } from "next/font/google";
+
+// const playfair = Playfair_Display({ subsets: ["latin"] });
+
+// const PORTFOLIO = [
+//   {
+//     image: "/siteoffice-2.webp",
+//     name: "Ravi Kumar",
+//     location: "Banjara Hills, Hyderabad",
+//     rating: 5,
+//     project: "Prefab Site Office",
+//   },
+//   {
+//     image: "/siteoffice-2.webp",
+//     name: "Anjali Sharma",
+//     location: "Whitefield, Bengaluru",
+//     rating: 4.5,
+//     project: "Arc Pod",
+//   },
+//   {
+//     image: "/siteoffice-2.webp",
+//     name: "Mohd. Irfan",
+//     location: "Tolichowki, Hyderabad",
+//     rating: 5,
+//     project: "Farm House",
+//   },
+//   {
+//     image: "/siteoffice-2.webp",
+//     name: "Suresh Reddy",
+//     location: "Gachibowli, Hyderabad",
+//     rating: 4.8,
+//     project: "Office",
+//   },
+//   {
+//     image: "/siteoffice-2.webp",
+//     name: "Neha Verma",
+//     location: "Kondapur, Hyderabad",
+//     rating: 4.7,
+//     project: "Smoking Room",
+//   },
+//   {
+//     image: "/siteoffice-2.webp",
+//     name: "Arjun Patel",
+//     location: "Madhapur, Hyderabad",
+//     rating: 5,
+//     project: "Security Room",
+//   },
+// ];
+
+// export default function OurPortfolio() {
+//   const sectionRef = useRef<HTMLDivElement>(null);
+
+//   const { scrollYProgress } = useScroll({
+//     target: sectionRef,
+//     offset: ["start end", "end start"],
+//   });
+
+//   const gridY = useTransform(scrollYProgress, [0, 1], [80, -80]);
+
+//   return (
+//     <section
+//       ref={sectionRef}
+//       className="px-6 md:px-10 py-24 overflow-hidden"
+//     >
+//       <div className="max-w-7xl mx-auto">
+
+//         <motion.div
+//           initial={{ opacity: 0.5, y: 60 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: false }}
+//           transition={{ duration: 0.9, ease: "easeOut" }}
+//           className="mb-16 max-w-screen text-center md:text-left"
+//         >
+//           <p className="uppercase tracking-widest text-sm text-[#886c46] mb-3">
+//             Our Portfolio
+//           </p>
+//           <h2 className={`${playfair.className} text-3xl md:text-6xl font-semibold bg-linear-to-r from-black via-[#886c46] to-black bg-clip-text text-transparent mb-4`}>
+//             Homes we’ve transformed, families we’ve satisfied
+//           </h2>
+//           <p className="text-black/60">
+//             Every project reflects our commitment to quality,
+//             transparency and customer happiness.
+//           </p>
+//         </motion.div>
+// <motion.div
+//   style={{ y: gridY }}
+//   variants={{
+//     hidden: {},
+//     visible: {
+//       transition: { staggerChildren: 0.18 },
+//     },
+//   }}
+//   initial="hidden"
+//   whileInView="visible"
+//   viewport={{ once: false }}
+//   className="
+//     grid grid-cols-1 md:grid-cols-4 auto-rows-[260px] 
+//     gap-6
+//   "
+// >
+//   {PORTFOLIO.map((item, i) => {
+//     const bentoStyles = [
+//       "md:col-span-2 md:row-span-2", // big hero
+//       "md:col-span-2 md:row-span-1", // wide
+//       "md:col-span-1 md:row-span-1", // small
+//       "md:col-span-1 md:row-span-2", // tall
+//       "md:col-span-2 md:row-span-1", // wide
+//       "md:col-span-1 md:row-span-1", // small
+//     ];
+
+//     return (
+//       <motion.div
+//         key={i}
+//         variants={{
+//           hidden: { opacity: 0.5, y: 60 },
+//           visible: {
+//             opacity: 1,
+//             y: 0,
+//             transition: {
+//               duration: 0.9,
+//               ease: "easeOut",
+//             },
+//           },
+//         }}
+//         onMouseMove={(e) => {
+//           const rect = e.currentTarget.getBoundingClientRect();
+//           const x = e.clientX - rect.left - rect.width / 2;
+//           const y = e.clientY - rect.top - rect.height / 2;
+//           e.currentTarget.style.setProperty("--x", `${x}px`);
+//           e.currentTarget.style.setProperty("--y", `${y}px`);
+//         }}
+//         className={`
+//           group relative overflow-hidden rounded-3xl
+//           border border-black/10 bg-black
+//           perspective-distant
+//           ${bentoStyles[i % bentoStyles.length]}
+//         `}
+//       >
+//         <motion.div
+//           className="relative w-full h-full"
+//           whileHover={{
+//             scale: 1.12,
+//             x: "calc(var(--x) / 30)",
+//             y: "calc(var(--y) / 30)",
+//           }}
+//           transition={{ duration: 1.2, ease: "easeOut" }}
+//         >
+//           <Image
+//             src={item.image}
+//             alt={item.project}
+//             fill
+//             className="object-cover"
+//           />
+//         </motion.div>
+//         <div
+//           className="absolute inset-0 pointer-events-none"
+//           style={{
+//             background:
+//               "radial-gradient(600px circle at var(--x) var(--y), rgba(255,255,255,0.18), transparent 40%)",
+//           }}
+//         />
+
+//         <motion.div
+//           className="
+//             absolute inset-0
+//             bg-linear-to-t from-black/80 via-black/40 to-transparent
+//             flex flex-col justify-end p-6
+//           "
+//         >
+//           <p className="text-sm text-white/80 mb-1">
+//             {item.project}
+//           </p>
+
+//           <h3 className="text-xl font-semibold text-white">
+//             {item.name}
+//           </h3>
+
+//           <p className="text-white/70 text-sm mb-4">
+//             {item.location}
+//           </p>
+
+//           <div className="flex items-center justify-between">
+//             <div className="flex items-center gap-1">
+//               <Star
+//                 size={16}
+//                 className="text-yellow-400 fill-yellow-400"
+//               />
+//               <span className="text-white text-sm font-medium">
+//                 {item.rating}
+//               </span>
+//             </div>
+
+//           </div>
+//         </motion.div>
+//       </motion.div>
+//     );
+//   })}
+// </motion.div>
+
+
+//       </div>
+//     </section>
+//   );
+// }
+
+
 "use client";
 
 import Image from "next/image";
@@ -15,6 +231,7 @@ const playfair = Playfair_Display({ subsets: ["latin"] });
 const PORTFOLIO = [
   {
     image: "/siteoffice-2.webp",
+    interiorImage: "/products-hero.png",
     name: "Ravi Kumar",
     location: "Banjara Hills, Hyderabad",
     rating: 5,
@@ -22,6 +239,7 @@ const PORTFOLIO = [
   },
   {
     image: "/siteoffice-2.webp",
+    interiorImage: "/products-hero.png",
     name: "Anjali Sharma",
     location: "Whitefield, Bengaluru",
     rating: 4.5,
@@ -29,6 +247,7 @@ const PORTFOLIO = [
   },
   {
     image: "/siteoffice-2.webp",
+    interiorImage: "/products-hero.png",
     name: "Mohd. Irfan",
     location: "Tolichowki, Hyderabad",
     rating: 5,
@@ -36,6 +255,7 @@ const PORTFOLIO = [
   },
   {
     image: "/siteoffice-2.webp",
+    interiorImage: "/products-hero.png",
     name: "Suresh Reddy",
     location: "Gachibowli, Hyderabad",
     rating: 4.8,
@@ -43,6 +263,7 @@ const PORTFOLIO = [
   },
   {
     image: "/siteoffice-2.webp",
+    interiorImage: "/products-hero.png",
     name: "Neha Verma",
     location: "Kondapur, Hyderabad",
     rating: 4.7,
@@ -50,11 +271,21 @@ const PORTFOLIO = [
   },
   {
     image: "/siteoffice-2.webp",
+    interiorImage: "/products-hero.png",
     name: "Arjun Patel",
     location: "Madhapur, Hyderabad",
     rating: 5,
     project: "Security Room",
   },
+];
+
+const bentoStyles = [
+  "md:col-span-2 md:row-span-2",
+  "md:col-span-2 md:row-span-1",
+  "md:col-span-1 md:row-span-1",
+  "md:col-span-1 md:row-span-2",
+  "md:col-span-2 md:row-span-1",
+  "md:col-span-1 md:row-span-1",
 ];
 
 export default function OurPortfolio() {
@@ -68,10 +299,7 @@ export default function OurPortfolio() {
   const gridY = useTransform(scrollYProgress, [0, 1], [80, -80]);
 
   return (
-    <section
-      ref={sectionRef}
-      className="px-6 md:px-10 py-24 overflow-hidden"
-    >
+    <section ref={sectionRef} className="px-6 md:px-10 py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
         <motion.div
@@ -84,130 +312,137 @@ export default function OurPortfolio() {
           <p className="uppercase tracking-widest text-sm text-[#886c46] mb-3">
             Our Portfolio
           </p>
-          <h2 className={`${playfair.className} text-3xl md:text-6xl font-semibold bg-linear-to-r from-black via-[#886c46] to-black bg-clip-text text-transparent mb-4`}>
-            Homes we’ve transformed, families we’ve satisfied
+          <h2
+            className={`${playfair.className} text-3xl md:text-6xl font-semibold bg-linear-to-r from-black via-[#886c46] to-black bg-clip-text text-transparent mb-4`}
+          >
+            Homes we've transformed, families we've satisfied
           </h2>
           <p className="text-black/60">
-            Every project reflects our commitment to quality,
-            transparency and customer happiness.
+            Every project reflects our commitment to quality, transparency and
+            customer happiness.
           </p>
         </motion.div>
-<motion.div
-  style={{ y: gridY }}
-  variants={{
-    hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.18 },
-    },
-  }}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: false }}
-  className="
-    grid grid-cols-1 md:grid-cols-4 auto-rows-[260px] 
-    gap-6
-  "
->
-  {PORTFOLIO.map((item, i) => {
-    const bentoStyles = [
-      "md:col-span-2 md:row-span-2", // big hero
-      "md:col-span-2 md:row-span-1", // wide
-      "md:col-span-1 md:row-span-1", // small
-      "md:col-span-1 md:row-span-2", // tall
-      "md:col-span-2 md:row-span-1", // wide
-      "md:col-span-1 md:row-span-1", // small
-    ];
-
-    return (
-      <motion.div
-        key={i}
-        variants={{
-          hidden: { opacity: 0.5, y: 60 },
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-              duration: 0.9,
-              ease: "easeOut",
-            },
-          },
-        }}
-        onMouseMove={(e) => {
-          const rect = e.currentTarget.getBoundingClientRect();
-          const x = e.clientX - rect.left - rect.width / 2;
-          const y = e.clientY - rect.top - rect.height / 2;
-          e.currentTarget.style.setProperty("--x", `${x}px`);
-          e.currentTarget.style.setProperty("--y", `${y}px`);
-        }}
-        className={`
-          group relative overflow-hidden rounded-3xl
-          border border-black/10 bg-black
-          perspective-distant
-          ${bentoStyles[i % bentoStyles.length]}
-        `}
-      >
-        <motion.div
-          className="relative w-full h-full"
-          whileHover={{
-            scale: 1.12,
-            x: "calc(var(--x) / 30)",
-            y: "calc(var(--y) / 30)",
-          }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-        >
-          <Image
-            src={item.image}
-            alt={item.project}
-            fill
-            className="object-cover"
-          />
-        </motion.div>
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(600px circle at var(--x) var(--y), rgba(255,255,255,0.18), transparent 40%)",
-          }}
-        />
 
         <motion.div
-          className="
-            absolute inset-0
-            bg-linear-to-t from-black/80 via-black/40 to-transparent
-            flex flex-col justify-end p-6
-          "
+          style={{ y: gridY }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.18 } },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false }}
+          className="grid grid-cols-1 md:grid-cols-4 auto-rows-[260px] gap-6"
         >
-          <p className="text-sm text-white/80 mb-1">
-            {item.project}
-          </p>
+          {PORTFOLIO.map((item, i) => (
+            <motion.div
+              key={i}
+              variants={{
+                hidden: { opacity: 0.5, y: 60 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.9, ease: "easeOut" },
+                },
+              }}
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                e.currentTarget.style.setProperty("--x", `${x}px`);
+                e.currentTarget.style.setProperty("--y", `${y}px`);
+              }}
+              className={`
+                group relative overflow-hidden rounded-3xl
+                border border-black/10 bg-black
+                perspective-distant
+                ${bentoStyles[i % bentoStyles.length]}
+              `}
+            >
+              {/* ── Exterior image (default, scales on hover) ── */}
+              <motion.div
+                className="absolute inset-0 w-full h-full"
+                whileHover={{
+                  scale: 1.12,
+                  x: "calc(var(--x) / 30)",
+                  y: "calc(var(--y) / 30)",
+                }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
+              >
+                <Image
+                  src={item.image}
+                  alt={`${item.project} exterior`}
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
 
-          <h3 className="text-xl font-semibold text-white">
-            {item.name}
-          </h3>
+              {/* ── Interior image (fades in on hover) ── */}
+              <div
+                className="
+                  absolute inset-0 w-full h-full
+                  opacity-0 group-hover:opacity-100
+                  transition-opacity duration-700 ease-in-out
+                  z-10
+                "
+              >
+                <Image
+                  src={item.interiorImage}
+                  alt={`${item.project} interior`}
+                  fill
+                  className="object-cover scale-105 group-hover:scale-100 transition-transform duration-700 ease-in-out"
+                />
+              </div>
 
-          <p className="text-white/70 text-sm mb-4">
-            {item.location}
-          </p>
+              {/* ── Interior label badge ── */}
+              <div
+                className="
+                  absolute top-4 right-4 z-30
+                  opacity-0 group-hover:opacity-100
+                  translate-y-2 group-hover:translate-y-0
+                  transition-all duration-500 ease-out
+                  flex items-center gap-1.5
+                  px-3 py-1.5 rounded-full
+                  bg-white/10 backdrop-blur-md
+                  border border-white/20
+                  text-white text-xs font-medium tracking-wide
+                "
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#886c46] inline-block" />
+                Interior View
+              </div>
 
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-1">
-              <Star
-                size={16}
-                className="text-yellow-400 fill-yellow-400"
+              {/* ── Mouse-follow shimmer ── */}
+              <div
+                className="absolute inset-0 pointer-events-none z-20"
+                style={{
+                  background:
+                    "radial-gradient(600px circle at var(--x) var(--y), rgba(255,255,255,0.12), transparent 40%)",
+                }}
               />
-              <span className="text-white text-sm font-medium">
-                {item.rating}
-              </span>
-            </div>
 
-          </div>
+              {/* ── Info overlay ── */}
+              <div
+                className="
+                  absolute inset-0 z-30
+                  bg-gradient-to-t from-black/80 via-black/30 to-transparent
+                  flex flex-col justify-end p-6
+                "
+              >
+                <p className="text-sm text-white/70 mb-1 group-hover:text-[#c9a87c] transition-colors duration-300">
+                  {item.project}
+                </p>
+                <h3 className="text-xl font-semibold text-white">{item.name}</h3>
+                <p className="text-white/60 text-sm mb-4">{item.location}</p>
+
+                <div className="flex items-center gap-1">
+                  <Star size={14} className="text-yellow-400 fill-yellow-400" />
+                  <span className="text-white text-sm font-medium">{item.rating}</span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
-      </motion.div>
-    );
-  })}
-</motion.div>
-
-
       </div>
     </section>
   );

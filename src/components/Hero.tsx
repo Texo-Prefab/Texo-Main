@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import { Merriweather, Inter, Playfair_Display } from 'next/font/google'
 import { ArrowRight, ShieldCheck, Star, Award } from 'lucide-react'
+import MarqueeBanner from './Marquee'
 
 const merri = Merriweather({
   subsets: ['latin'],
@@ -446,36 +447,7 @@ const Hero = () => {
         </motion.div>
       </motion.div>
     </section>
-    {/* trust metrics marquee */}
-    <div className="overflow-hidden bg-gray-900 py-6">
-      <div className="marquee flex gap-12 px-4 items-center">
-        {[
-          { icon: ShieldCheck, label: 'ISO Certified' },
-          { icon: Star, label: '99% Client Satisfaction' },
-          { icon: Award, label: '500+ Projects Delivered' },
-          { icon: ShieldCheck, label: '24/7 Support' },
-          { icon: Star, label: 'Top Rated Provider' },
-        ].map((item, i) => (
-          <div key={i} className="flex items-center gap-3 text-white px-6 py-2 rounded-full bg-[#886c46] text-sm font-medium shrink-0">
-            <item.icon className="h-5 w-5 text-white" />
-            <span>{item.label}</span>
-          </div>
-        ))}
-        {/* repeat to create continuous scroll */}
-        {[
-          { icon: ShieldCheck, label: 'ISO Certified' },
-          { icon: Star, label: '99% Client Satisfaction' },
-          { icon: Award, label: '500+ Projects Delivered' },
-          { icon: ShieldCheck, label: '24/7 Support' },
-          { icon: Star, label: 'Top Rated Provider' },
-        ].map((item, i) => (
-          <div key={i+5} className="flex items-center gap-3 text-white px-6 py-2 rounded-full bg-[#886c46] text-sm font-medium shrink-0">
-            <item.icon className="h-5 w-5 text-white" />
-            <span>{item.label}</span>
-          </div>
-        ))}
-      </div>
-    </div>
+    <MarqueeBanner />
     </>
   )
 }
