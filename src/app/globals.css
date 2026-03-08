@@ -13,3 +13,22 @@
     transform: translateX(-50%);
   }
 }
+
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(0,0,0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #886c46;
+  scrollbar-shadow-color: #a3885f;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6f5637;
+}

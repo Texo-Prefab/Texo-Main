@@ -208,7 +208,7 @@ const Nav = () => {
 
       </div>
 
-      <div 
+      {/* <div 
         className={`fixed top-5 left-1/2 -translate-x-1/2 z-999 transition-all rounded-full border border-[#886c46] duration-500 ${
           scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-20 pointer-events-none'
         }`}
@@ -231,6 +231,50 @@ const Nav = () => {
               { label: "PRODUCTS", href: "/products" },
               { label: "FEATURES", href: "/features" },
               { label: "CONTACT US", href: "/contact" },
+            ].map((item) => (
+              <li key={item.label}>
+                <Link
+                  href={item.href}
+                  className="
+                    relative cursor-pointer
+                    text-[13px] tracking-[0.15em] text-black/80
+                    transition-all duration-300 hover:text-[#886c46]
+                    after:absolute after:left-1/2 after:-bottom-1.5
+                    after:h-px after:w-0 after:bg-[#886c46]
+                    after:transition-all after:duration-300
+                    hover:after:left-0 hover:after:w-full
+                  "
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div> */}
+      <div 
+        className={`fixed top-5 left-1/2 -translate-x-1/2 z-999 transition-all rounded-full border border-[#886c46] duration-500 scale-75 sm:scale-100 origin-top ${
+          scrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-20 pointer-events-none'
+        }`}
+      >
+        <div className="relative">
+          <div className="absolute inset-0 rounded-full border border-[#886c46] blur-xl bg-[#886c46]/10" />
+          <ul 
+            className={`${merri.className}
+              relative flex justify-center items-center gap-8
+              px-10 py-4 rounded-full
+              bg-white/80 backdrop-blur-xl
+              border border-white/40
+              shadow-[0_10px_40px_rgba(0,0,0,0.25)]
+              before:absolute before:inset-0 before:rounded-full
+              before:border before:border-[#886c46]/20 before:opacity-60
+            `}
+          >
+            {[
+              { label: "HOME", href: "/" },
+              { label: "PRODUCTS", href: "/products" },
+              { label: "FEATURES", href: "/features" },
+              { label: "CONTACT", href: "/contact" },
             ].map((item) => (
               <li key={item.label}>
                 <Link

@@ -162,7 +162,7 @@ const OurProducts = () => {
           />
         </motion.div>
 
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {products.map((product, index) => (
             <ProductCard key={product.id} product={product} index={index} />
           ))}
@@ -271,7 +271,7 @@ const ProductCard = ({ product, index }: { product: any; index: number }) => {
             {product.description}
           </p>
 
-          {/* Features */}
+          {/* Features
           <div className="mb-6 space-y-2.5">
             {product.features.map((feature: string, idx: number) => (
               <motion.div
@@ -296,7 +296,7 @@ const ProductCard = ({ product, index }: { product: any; index: number }) => {
                 </span>
               </motion.div>
             ))}
-          </div>
+          </div> */}
 
           {/* CTA */}
           <div className="flex items-center justify-between border-t border-[#886c46]/10 pt-5">
