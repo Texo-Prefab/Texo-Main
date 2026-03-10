@@ -62,9 +62,9 @@ export default function PremiumFooter() {
 
   return (
     <>
-    
 
-    <footer ref={footerRef} className="relative bg-black text-white overflow-hidden min-h-screen">
+
+    <footer ref={footerRef} className="relative bg-black text-white overflow-hidden max-h-screen z-99999">
 
       <div
         className="absolute inset-0 opacity-[0.02]"
@@ -86,9 +86,9 @@ export default function PremiumFooter() {
         className="h-1.5 bg-linear-to-r from-black via-[#886c46] to-black origin-left"
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pb-20 pt-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pb-10 pt-6">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-6">
 
           <div>
             <div className="w-full mb-6">
@@ -203,7 +203,7 @@ export default function PremiumFooter() {
             ))}
           </div>
         </div>
-             
+
         <motion.div
           initial={{ scaleX: 0 }}
           animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
@@ -229,3 +229,5 @@ export default function PremiumFooter() {
     </>
   );
 }
+
+

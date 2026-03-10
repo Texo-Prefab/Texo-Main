@@ -124,28 +124,7 @@ export default function OurTeam() {
 
         </motion.div>
 
-        {/* ── Bottom stat strip ───────────────────────────────── */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.8, delay: 0.35 }}
-          className="mt-12 flex flex-wrap items-center justify-center gap-8 md:gap-16"
-        >
-          {[
-            { v: "80+", l: "Team Members" },
-            { v: "12+", l: "Specialisations" },
-            { v: "18+", l: "Years Together" },
-          ].map((s, i) => (
-            <div key={i} className="flex items-center gap-8 md:gap-16">
-              {i > 0 && <div className="hidden md:block h-6 w-px bg-[#886c46]/20" />}
-              <div className="text-center">
-                <p className={`${playfair.className} text-2xl font-bold text-[#886c46] leading-none mb-1`}>{s.v}</p>
-                <p className={`${cormorant.className} text-[0.6rem] tracking-[0.22em] uppercase text-zinc-400 font-medium`}>{s.l}</p>
-              </div>
-            </div>
-          ))}
-        </motion.div>
+        
 
       </div>
     </section>

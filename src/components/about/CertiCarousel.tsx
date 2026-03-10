@@ -123,7 +123,7 @@ export default function CertiCarousel() {
             </span>
           </h2>
 
-          <p className={`${cormorant.className} text-zinc-500 text-lg font-light leading-[1.85]`}>
+          <p className={`${cormorant.className} text-black text-lg font-light leading-[1.85]`}>
             Every certificate we hold is a promise kept — to our clients, our craft, and the industry.
             Texo{`'`}s accreditations reflect eighteen years of building to the highest international standards.
           </p>

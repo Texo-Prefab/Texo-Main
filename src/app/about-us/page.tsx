@@ -8,6 +8,7 @@ import Promise from '@/components/about/Promise'
 import Founders from '@/components/about/Founder'
 import CertiCarousel from '@/components/about/CertiCarousel'
 import OurTeam from '@/components/about/OurTeam'
+import Carousel from '@/components/about/Carousel'
 
 // const playfair = Playfair_Display({
 //   subsets: ['latin'],
@@ -25,6 +26,7 @@ const About = () => {
       <Founders />
       <CertiCarousel />
       <OurTeam />
+      <Carousel />
     </div>
   )
 }

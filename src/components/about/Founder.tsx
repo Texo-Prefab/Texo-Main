@@ -75,7 +75,7 @@ export default function Founders() {
             </span>
           </h2>
 
-          <p className={`${cormorant.className} text-zinc-500 text-lg font-light leading-[1.85]`}>
+          <p className={`${cormorant.className} text-black text-lg font-light leading-[1.85]`}>
             Texo was not built by capital alone — it was built by conviction. Meet the two founders whose decisions, values, and relentless standards shaped every module we have ever made.
           </p>
 

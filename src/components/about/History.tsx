@@ -16,7 +16,7 @@ const cormorant = Cormorant_Garamond({
 
 export default function History() {
   return (
-    <section className="relative bg-linear-to-b from-white via-[#faf8f4] to-white overflow-hidden py-0">
+    <section className="relative bg-linear-to-b from-white via-[#faf8f4] to-white overflow-hidden py-8">
 
      
 
@@ -121,10 +121,10 @@ export default function History() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="space-y-4 mb-10"
             >
-              <p className={`${cormorant.className} text-zinc-500 text-lg font-light leading-[1.85]`}>
+              <p className={`${cormorant.className} text-black text-lg font-light leading-[1.85]`}>
                 At Texo Prefab World, we don’t just construct spaces—we craft smart, scalable environments that adapt to how you live, work, and grow. With 7+ years of expertise, our ISO 9001:2025-certified studio based in Hyderabad delivers precision-engineered prefab structures for both luxury living and large-scale industrial use.
               </p>
-              <p className={`${cormorant.className} text-zinc-500 text-lg font-light leading-[1.85]`}>
+              <p className={`${cormorant.className} text-black text-lg font-light leading-[1.85]`}>
                From signature A-Frame homes and sleek cottages to high-performance control rooms, warehouses, and container offices, our modular systems are built for speed, sustainability, and standout design. Whether you’re envisioning a minimalist getaway or a functional operations hub, Texo’s plug-and-play approach redefines how space is imagined—crafted to move with you and built to last.
               </p>
             </motion.div>
