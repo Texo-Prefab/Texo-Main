@@ -63,25 +63,7 @@ export default function Carousel() {
     return () => { if (timerRef.current) clearTimeout(timerRef.current); };
   }, [current, paused, next]);
 
-  const variants = {
-    enter: (dir: number) => ({
-      x: dir > 0 ? '6%' : '-6%',
-      opacity: 0,
-      scale: 1.04,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] },
-    },
-    exit: (dir: number) => ({
-      x: dir > 0 ? '-4%' : '4%',
-      opacity: 0,
-      scale: 0.97,
-      transition: { duration: 0.55, ease: [0.4, 0, 1, 1] },
-    }),
-  };
+  
 
   return (
     <section className="relative w-full py-16 overflow-hidden">
@@ -116,7 +98,6 @@ export default function Carousel() {
             <motion.div
               key={current}
               custom={direction}
-              variants={variants}
               initial="enter"
               animate="center"
               exit="exit"
@@ -202,14 +183,14 @@ export default function Carousel() {
             <button
               onClick={prev}
               aria-label="Previous slide"
-              className="group w-10 h-10 flex items-center justify-center rounded-xl border border-black text-black hover:text-white hover:border-[#886c46]/40 transition-all duration-300"
+              className="group w-10 h-10 flex items-center justify-center rounded-xl border border-black text-black hover:text-[#886c46] hover:border-[#886c46]/40 transition-all duration-300"
             >
               <ChevronLeft size={17} className="group-hover:-translate-x-0.5 transition-transform duration-200" />
             </button>
             <button
               onClick={next}
               aria-label="Next slide"
-              className="group w-10 h-10 flex items-center justify-center rounded-xl border border-black text-black hover:text-white hover:border-[#886c46]/40 transition-all duration-300"
+              className="group w-10 h-10 flex items-center justify-center rounded-xl border border-black text-black hover:text-[#886c46] hover:border-[#886c46]/40 transition-all duration-300"
             >
               <ChevronRight size={17} className="group-hover:translate-x-0.5 transition-transform duration-200" />
             </button>
