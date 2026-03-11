@@ -26,7 +26,7 @@ export default function Home() {
         //   backgroundSize: '50px 50px'
         // }}
       />
-        <Hero />
+        {/* <Hero />
         <BestSeller />
         <OurProducts />
         <OurProcess />
@@ -36,7 +36,24 @@ export default function Home() {
         <BlogsSection />
         <VlogsSection />
         <CustomerReview />
-        <Contact />
+        <Contact /> */}
+        <Hero />
+
+<BestSeller />
+
+
+
+<OurPortfolio />
+
+<WhyChooseUs />
+
+<OurProcess />
+
+<OurProducts />
+<OurClients />
+<CustomerReview />
+<VlogsSection />
+<Contact />
       </main>
     </div>
   );

@@ -36,7 +36,7 @@ const VLOGS = [
 
 export default function VlogsSection() {
   return (
-    <section className="bg-black px-4 md:px-6 lg:px-8 mx-0 md:mx-4 lg:mx-8 rounded-2xl md:rounded-3xl lg:rounded-4xl py-8 md:py-12 lg:py-16 text-white">
+    <section className="bg-black px-4 md:px-6 mb-8 lg:px-8 mx-0 md:mx-4 lg:mx-8 rounded-2xl md:rounded-3xl lg:rounded-4xl py-8 md:py-12 lg:py-16 text-white">
       <div className="max-w-screen text-center md:text-left">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-8 md:mb-12 lg:mb-16">
           <div>
