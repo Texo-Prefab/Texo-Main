@@ -81,13 +81,6 @@ const OurProducts = () => {
 
   return (
     <motion.section
-  initial={{ backgroundColor: "#ffffff" }}
-  whileInView={{ backgroundColor: "#886c46" }}
-  viewport={{ once: false }}
-  transition={{
-    duration: 2.8,
-    ease: "easeInOut"
-  }}
   className="relative min-h-screen py-24 overflow-hidden"
 >
       
@@ -120,7 +113,7 @@ const OurProducts = () => {
                       transition={{ duration: 0.6 }}
                       className="mb-6 inline-block"
                     >
-                      <span className="inline-flex items-center gap-2 rounded-full border border-[#000010]/30 bg-[#000010] px-5 py-2 text-xs font-light tracking-widest text-[#f8f5f0] backdrop-blur-sm shadow-2xl">
+                      <span className="inline-flex items-center gap-2 rounded-full border border-[#886c46]/60 bg-[#886c46] px-5 py-2 text-xs font-light tracking-widest text-[#f8f5f0] backdrop-blur-sm shadow-2xl">
                         <span className="relative flex h-2 w-2">
                           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f8f5f0] opacity-75"></span>
                           <span className="relative inline-flex h-2 w-2 rounded-full bg-[#f8f5f0]"></span>
@@ -133,7 +126,7 @@ const OurProducts = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: false }}
                       transition={{ duration: 0.8, delay: 0.2 }}
-                      className={`${playfair.className} mb-6 text-4xl font-light leading-tight text-white md:text-5xl lg:text-6xl`}
+                      className={`${playfair.className} mb-6 text-4xl font-light leading-tight text-transparent bg-linear-to-r from-black via-[#886c46] to-black bg-clip-text md:text-5xl lg:text-6xl`}
                     >
                       Prefabricated Solutions
                       <br />
