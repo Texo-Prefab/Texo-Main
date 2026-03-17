@@ -64,7 +64,7 @@ export default function PremiumFooter() {
     <>
 
 
-    <footer ref={footerRef} className="relative bg-black text-white overflow-hidden max-h-screen z-99999">
+    <footer ref={footerRef} className="relative bg-black text-white overflow-hidden md:max-h-screen  z-99999">
 
       <div
         className="absolute inset-0 opacity-[0.02]"
