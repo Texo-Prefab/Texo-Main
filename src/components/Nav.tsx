@@ -125,8 +125,8 @@ const Nav = () => {
 
             <div className="flex items-center gap-4">
               <button className={`${merri.className} group relative overflow-hidden rounded-full border border-[#886c46]/30 bg-linear-to-r from-[#886c46] to-[#6f5838] px-6 py-2.5 text-sm font-light tracking-wide text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-[#886c46]/20`}>
-                <span className="relative z-10">CONTACT US</span>
-                <div className="absolute inset-0 z-0 bg-linear-to-r from-[#6f5838] to-[#886c46] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <Link href={'/contact-us'}><span className="relative z-10">CONTACT US</span>
+                <div className="absolute inset-0 z-0 bg-linear-to-r from-[#6f5838] to-[#886c46] opacity-0 transition-opacity duration-300 group-hover:opacity-100" /></Link>
               </button>
               <button className="lg:hidden text-white">
                 <Menu className="h-6 w-6" />
@@ -274,7 +274,7 @@ const Nav = () => {
               { label: "HOME", href: "/" },
               { label: "PRODUCTS", href: "/products" },
               { label: "FEATURES", href: "/features" },
-              { label: "CONTACT", href: "/contact" },
+              { label: "CONTACT", href: "/contact-us" },
             ].map((item) => (
               <li key={item.label}>
                 <Link

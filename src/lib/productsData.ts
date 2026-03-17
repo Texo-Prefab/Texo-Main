@@ -7,7 +7,7 @@ export interface ProductData {
   description: string
   longDescription: string
   gallery: string[]
-  variants: { variantName: string; variantImage: string }[]
+  variants: { variantName: string; variantImage: string; variantInterior: string; }[]
   advantages: { title: string; description: string; icon: string }[]
   faq: { question: string; answer: string }[]
   trustBand: {
@@ -63,16 +63,24 @@ Whether used as a vacation home, guest house, or permanent residence, our A-Fram
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
   faq: [
@@ -140,16 +148,24 @@ Our Arc Pods are crafted using advanced CNC technology combined with traditional
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -217,16 +233,24 @@ Whether you're building your dream home or creating a family retreat, our Wooden
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -294,16 +318,24 @@ Our Smart Houses are built with scalability in mind, allowing you to start with 
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -372,16 +404,24 @@ Our Porta Cabins are engineered to withstand transportation and various environm
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -449,16 +489,24 @@ Each Farmhouse is built to last, with reinforced structures that can withstand t
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -526,16 +574,24 @@ Our Portable Cabins are built to industry standards, providing safe and comforta
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -603,16 +659,24 @@ Our Bunk House Cabins are engineered for durability and can be equipped with add
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -680,16 +744,24 @@ Our Container Houses combine the strength and durability of shipping containers 
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -757,16 +829,24 @@ Our Modular Toilets are built to withstand heavy use and can be equipped with ad
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -834,16 +914,24 @@ Our Mobile Toilets are equipped with stabilizing systems for safe operation and 
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -911,16 +999,24 @@ Our Portable Toilet Cabins are built for durability and can handle high-traffic 
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -988,16 +1084,24 @@ Our Prefab Site Offices are built to withstand construction site conditions whil
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -1065,16 +1169,24 @@ Our Prefab Structures are built with high-quality materials and can be customize
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -1142,16 +1254,24 @@ Our Prefabricated Accommodation is ideal for housing developments, temporary com
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -1219,16 +1339,24 @@ Our Prefab Houses are designed for comfortable family living, with spacious layo
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -1296,16 +1424,24 @@ Our Prefab Schools are built to educational standards and can be equipped with m
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -1373,16 +1509,24 @@ Our Clinic Cabins are designed for quick deployment and can be equipped with sol
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
 
@@ -1451,16 +1595,24 @@ Our Restaurant Cabins are ideal for events, construction sites, resorts, and tem
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -1528,16 +1680,24 @@ Our Smoking Rooms are suitable for offices, hotels, restaurants, and public faci
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -1605,16 +1765,24 @@ Our Electrical Rooms are essential for power distribution, data centers, and ind
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -1682,16 +1850,24 @@ Our Security Cabins are used in residential complexes, commercial facilities, an
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -1759,16 +1935,24 @@ Our Toll Booths are equipped with modern payment systems including cash, card, a
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
 
@@ -1837,16 +2021,24 @@ Our ATM Cabins are suitable for various locations including retail centers, gas 
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -1914,16 +2106,24 @@ Our Control Rooms are essential for industries requiring precise environmental c
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -1991,16 +2191,24 @@ Our Solar Control Rooms are ideal for environmental monitoring, renewable energy
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [
@@ -2068,16 +2276,24 @@ Our Clean Rooms are essential for industries where particle contamination must b
 ],
 variants: [
   {
-    variantName: 'Standard A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: 'Studio',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Luxury A-Frame',
-    variantImage: '/siteoffice-2.webp'
+    variantName: '1-BHK',
+    variantImage: '/siteoffice-2.webp',
+    variantInterior: '/siteoffice-2.webp'
   },
   {
-    variantName: 'Compact A-Frame',
-    variantImage: '/products-hero.png'
+    variantName: '2-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
+  },
+  {
+    variantName: '3-BHK',
+    variantImage: '/products-hero.png',
+    variantInterior: '/siteoffice-2.webp'
   }
 ],
     faq: [

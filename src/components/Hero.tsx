@@ -2,14 +2,10 @@
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
-import { Merriweather, Inter, Playfair_Display } from 'next/font/google'
-import { ArrowRight, ShieldCheck, Star, Award } from 'lucide-react'
+import { Inter, Playfair_Display } from 'next/font/google'
+import { ArrowRight } from 'lucide-react'
 import MarqueeBanner from './Marquee'
 
-const merri = Merriweather({
-  subsets: ['latin'],
-  weight: ['300', '400', '700', '900'],
-})
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -169,39 +165,7 @@ const Hero = () => {
               Experience the future of construction with our premium prefabricated solutions.
             </motion.p>
 
-            {/* <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="mb-12 flex gap-12 border-l border-white/10 pl-8"
-            >
-              <div className="group cursor-default">
-                <div className={`${merri.className} text-3xl font-bold text-[#d6ac70] transition-all group-hover:scale-110 md:text-4xl`}>
-                  60%
-                </div>
-                <p className={`${inter.className} mt-1.5 text-xs uppercase tracking-wider text-gray-400`}>
-                  Faster Build
-                </p>
-              </div>
-              <div className="h-auto w-px bg-white/10" />
-              <div className="group cursor-default">
-                <div className={`${merri.className} text-3xl font-bold text-[#d6ac70] transition-all group-hover:scale-110 md:text-4xl`}>
-                  500+
-                </div>
-                <p className={`${inter.className} mt-1.5 text-xs uppercase tracking-wider text-gray-400`}>
-                  Projects Done
-                </p>
-              </div>
-              <div className="h-auto w-px bg-white/10" />
-              <div className="group cursor-default">
-                <div className={`${merri.className} text-3xl font-bold text-[#d6ac70] transition-all group-hover:scale-110 md:text-4xl`}>
-                  95%
-                </div>
-                <p className={`${inter.className} mt-1.5 text-xs uppercase tracking-wider text-gray-400`}>
-                  Satisfaction
-                </p>
-              </div>
-            </motion.div> */}
+           
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}

@@ -117,6 +117,15 @@ export default function Variants({ product }: VariantsProps) {
           ))}
         </div>
       </div>
+      <div className="mt-16 text-center">
+  <p className={`${merri.className} text-black font-light text-base`}>
+    Don&apos;t see what you&apos;re looking for?{" "} <br />
+    <span className={`${playfair.className} italic text-[#886c46] font-medium`}>
+      Every variant above is fully customisable
+    </span>{" "}
+    — reach out and we&apos;ll craft something built precisely around your requirements.
+  </p>
+</div>
 
       {/* Bottom decorative line */}
       <motion.div

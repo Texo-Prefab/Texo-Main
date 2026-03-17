@@ -99,7 +99,7 @@ export default function History() {
             >
               <span className="text-black">Eighteen Years of</span>
               <br />
-              <span className="bg-linear-to-r from-black via-[#886c46] to-black bg-clip-text text-transparent">
+              <span className="text-[#886c46] bg-clip-text ">
                 Building India.
               </span>
             </motion.h2>
