@@ -92,6 +92,136 @@ const galleryItems: GalleryItem[] = [
 
 // ─── Lightbox ────────────────────────────────────────────────────────────────
 
+// const Lightbox = ({
+//   item,
+//   items,
+//   onClose,
+//   onPrev,
+//   onNext,
+// }: {
+//   item: GalleryItem
+//   items: GalleryItem[]
+//   onClose: () => void
+//   onPrev: () => void
+//   onNext: () => void
+// }) => {
+//   const currentIndex = items.findIndex(i => i.id === item.id)
+
+//   return (
+//     <motion.div
+//       initial={{ opacity: 0 }}
+//       animate={{ opacity: 1 }}
+//       exit={{ opacity: 0 }}
+//       transition={{ duration: 0.25 }}
+//       className="fixed inset-0 z-99999 flex items-center justify-center bg-black/90 backdrop-blur-sm px-4"
+//       onClick={onClose}
+//     >
+//       {/* Panel */}
+//       <motion.div
+//         initial={{ opacity: 0, scale: 0.95, y: 16 }}
+//         animate={{ opacity: 1, scale: 1, y: 0 }}
+//         exit={{ opacity: 0, scale: 0.95, y: 16 }}
+//         transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+//         className="relative w-full max-w-5xl bg-[#0d0b08] rounded-2xl overflow-hidden shadow-2xl"
+//         onClick={e => e.stopPropagation()}
+//       >
+//         <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px]">
+
+//           {/* Image */}
+//           <div className="relative h-full">
+//             <Image
+//               src={item.image}
+//               alt={item.title}
+//               fill
+//               className="object-cover"
+//             />
+//             <div className="absolute inset-0 bg-linear-to-t from-[#0d0b08]/60 via-transparent to-transparent" />
+
+//             {/* Nav arrows */}
+//             <button
+//               onClick={onPrev}
+//               className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:border-[#886c46]/60 hover:bg-[#886c46]/20 transition-all"
+//             >
+//               <ChevronLeft className="w-5 h-5" />
+//             </button>
+//             <button
+//               onClick={onNext}
+//               className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:border-[#886c46]/60 hover:bg-[#886c46]/20 transition-all"
+//             >
+//               <ChevronRight className="w-5 h-5" />
+//             </button>
+
+//             {/* Counter */}
+//             <div className={`${merri.className} absolute bottom-4 left-4 text-[0.6rem] font-light tracking-widest uppercase text-white/50`}>
+//               {currentIndex + 1} / {items.length}
+//             </div>
+//           </div>
+
+
+//           {/* Meta panel */}
+//           <div className="p-8 flex flex-col justify-between border-l border-white/6">
+//             <div>
+//               {/* Category + size badges */}
+//               <div className="flex flex-wrap gap-2 mb-6">
+//                 <span className={`${merri.className} text-[0.6rem] uppercase tracking-[0.18em] px-3 py-1.5 rounded-full border border-[#886c46]/40 text-[#886c46] font-light`}>
+//                   {item.category}
+//                 </span>
+//                 <span className={`${merri.className} text-[0.6rem] uppercase tracking-[0.18em] px-3 py-1.5 rounded-full bg-white/5 text-white/50 border border-white/10 font-light`}>
+//                   {item.size}
+//                 </span>
+//                 <span className={`${merri.className} text-[0.6rem] uppercase tracking-[0.18em] px-3 py-1.5 rounded-full bg-white/5 text-white/50 border border-white/10 font-light`}>
+//                   {item.tag}
+//                 </span>
+//               </div>
+
+//               <h2 className={`${playfair.className} text-2xl md:text-3xl font-bold text-white leading-tight mb-3`}>
+//                 {item.title}
+//               </h2>
+
+//               {item.highlight && (
+//                 <p className={`${merri.className} text-xs font-light text-[#a8926d] tracking-wide mb-6`}>
+//                   ✦ {item.highlight}
+//                 </p>
+//               )}
+
+//               <div className="space-y-3 mt-6">
+//                 {[
+//                   { label: 'Location', val: item.location },
+//                   { label: 'Size Class', val: item.size },
+//                   { label: 'Floor Area', val: item.sqft },
+//                   { label: 'Use Case', val: item.tag },
+//                 ].map(row => (
+//                   <div key={row.label} className="flex justify-between items-center py-3 border-b border-white/6 last:border-0">
+//                     <span className={`${merri.className} text-[0.65rem] font-light uppercase tracking-widest text-white/35`}>{row.label}</span>
+//                     <span className={`${merri.className} text-xs font-light text-white/70`}>{row.val}</span>
+//                   </div>
+//                 ))}
+//               </div>
+//             </div>
+
+//             <motion.button
+//               whileHover={{ scale: 1.03 }}
+//               whileTap={{ scale: 0.97 }}
+//               className={`${merri.className} mt-8 inline-flex items-center justify-center gap-2 w-full py-4 bg-linear-to-r from-[#886c46] to-[#6f5838] text-white rounded-xl text-sm font-light tracking-wide shadow-lg shadow-[#886c46]/25`}
+//             >
+//               Enquire About This Design
+//               <ArrowUpRight className="w-4 h-4" />
+//             </motion.button>
+//           </div>
+//         </div>
+//       </motion.div>
+
+//       {/* Close */}
+//       <button
+//         onClick={onClose}
+//         className="absolute top-5 right-5 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 transition-all border border-white/10"
+//       >
+//         <X className="w-5 h-5" />
+//       </button>
+//     </motion.div>
+//   )
+// }
+
 const Lightbox = ({
   item,
   items,
@@ -113,7 +243,7 @@ const Lightbox = ({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.25 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm px-4"
+      className="fixed inset-0 z-99999 flex items-center justify-center bg-black/90 backdrop-blur-sm px-4"
       onClick={onClose}
     >
       {/* Panel */}
@@ -128,7 +258,7 @@ const Lightbox = ({
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px]">
 
           {/* Image */}
-          <div className="relative h-full">
+          <div className="relative h-64 sm:h-80 lg:h-full lg:min-h-[520px]">
             <Image
               src={item.image}
               alt={item.title}
@@ -157,9 +287,8 @@ const Lightbox = ({
             </div>
           </div>
 
-
           {/* Meta panel */}
-          <div className="p-8 flex flex-col justify-between border-l border-white/6">
+          <div className="p-8 flex flex-col justify-between border-t border-white/6 lg:border-t-0 lg:border-l lg:border-l-white/6 overflow-y-auto max-h-[60vh] lg:max-h-none">
             <div>
               {/* Category + size badges */}
               <div className="flex flex-wrap gap-2 mb-6">
