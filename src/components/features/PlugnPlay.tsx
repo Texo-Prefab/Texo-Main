@@ -110,7 +110,7 @@ export default function PlugnPlay() {
                          <ShieldCheck className="text-[#886c46] shrink-0" size={32} />
                          <h2 className="text-xl font-bold">Quality Testing & Logistics Prep</h2>
                      </div>
-                     <p className="text-gray-100">
+                     <p className="text-black">
                          Every unit is QC-tested and prepped for smooth transport and on-site assembly.
                      </p>
                  </div>
