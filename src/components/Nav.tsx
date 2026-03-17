@@ -71,9 +71,11 @@ const Nav = () => {
         <div className="bg-black/50 backdrop-blur-md border border-black">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
             
-            <div className="shrink-0">
+            <Link href={'/'}>
+              <div className="shrink-0">
               <Image src='/logo.webp' width={90} height={90} alt='Prefab Construction Company Logo' className="h-auto w-auto" />
             </div>
+            </Link>
 
             <nav className="hidden lg:block">
               <ul className={`${merri.className} flex items-center gap-1`}>
